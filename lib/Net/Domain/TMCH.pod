@@ -1,0 +1,140 @@
+=encoding utf8
+
+=head1 NAME
+
+Net::Domain::TMCH - TradeMark Clearing House
+
+=head1 INHERITANCE
+
+ Net::Domain::TMCH
+   is a Exporter
+
+=head1 SYNOPSIS
+
+  my $tmch  = Net::Domain::TMCH->new(%options);
+
+  my $smd   = $tmch->smd($filename);
+
+=head1 DESCRIPTION
+
+Draft RFC L<http://tools.ietf.org/html/draft-lozano-tmch-func-07>
+specifies a way for TLD (domain registries) to exchange trademark right
+information (brand registrations).  This module manages the verification
+process of these files.
+
+=head1 METHODS
+
+=head2 Constructors
+
+=over 4
+
+=item Net::Domain::TMCH-E<gt>B<new>(OPTIONS)
+
+ -Option          --Default
+  cert_revocations  <according to rfc>
+  is_pilot          <false>
+  smd_admin         <generated internally>
+  smd_revocations   []
+  tmch_certificate  <included>
+
+=over 2
+
+=item cert_revocations => FILENAME|URI
+
+The CRL for invalidated TMV certificates.
+
+=item is_pilot => BOOLEAN
+
+=item smd_admin => L<Net::Domain::SMD|Net::Domain::SMD>-object
+
+=item smd_revocations => FILENAME|URI|ARRAY
+
+=item tmch_certificate => FILENAME
+
+This must be a PEM file which contains the certificate on top of all
+TMCH certificates.
+
+=back
+
+=back
+
+=head2 Attributes
+
+=over 4
+
+=item $obj-E<gt>B<certRevocations>()
+
+=item $obj-E<gt>B<isPilot>()
+
+=item $obj-E<gt>B<smdAdmin>()
+
+=item $obj-E<gt>B<smdRevocations>()
+
+=item $obj-E<gt>B<tmchCA>()
+
+=item $obj-E<gt>B<tmchCertficate>()
+
+=back
+
+=head2 Actions
+
+=over 4
+
+=item $obj-E<gt>B<smd>(FILENAME, OPTIONS)
+
+ -Option            --Default
+  accept_expired      <false>
+  trust_certificates  <false>
+
+=over 2
+
+=item accept_expired => BOOLEAN
+
+=item trust_certificates => BOOLEAN
+
+Do not check the certificates inside the SMD file for validity.
+
+=back
+
+example: 
+
+   my $smd = $tmch->smd($fh)
+       or die "cannot use $fn: $@";
+
+=back
+
+=head1 SEE ALSO
+
+This module is part of Net-Domain-TMCH distribution version 0.11,
+built on October 11, 2013. Website: F<http://perl.overmeer.net/xml-compile/>
+
+Other distributions in this suite:
+L<XML::Compile>,
+L<XML::Compile::SOAP>,
+L<XML::Compile::SOAP12>,
+L<XML::Compile::SOAP::Daemon>,
+L<XML::Compile::SOAP::WSA>,
+L<XML::Compile::C14N>,
+L<XML::Compile::WSS>,
+L<XML::Compile::WSS::Signature>,
+L<XML::Compile::Tester>,
+L<XML::Compile::Cache>,
+L<XML::Compile::Dumper>,
+L<XML::Compile::RPC>,
+L<XML::Rewrite>
+and
+L<XML::LibXML::Simple>.
+
+Please post questions or ideas to the mailinglist at
+F<http://lists.scsys.co.uk/cgi-bin/mailman/listinfo/xml-compile> .
+For live contact with other developers, visit the C<#xml-compile> channel
+on C<irc.perl.org>.
+
+=head1 LICENSE
+
+Copyrights 2013 by [Mark Overmeer]. For other contributors see ChangeLog.
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+See F<http://www.perl.com/perl/misc/Artistic.html>
+

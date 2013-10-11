@@ -1,0 +1,186 @@
+=encoding utf8
+
+=head1 NAME
+
+Net::Domain::SMD::File - Info from one SMD file
+
+=head1 SYNOPSIS
+
+  my $smd  = Net::Domain::SMD->new(%options);
+  my $smdf = $smd->read($fn);
+
+=head1 DESCRIPTION
+
+Draft RFC L<http://tools.ietf.org/html/draft-lozano-tmch-func-spec-06>
+SMD information is packaged.  This object represents one file in wrapped
+format.
+
+=head1 METHODS
+
+=head2 Constructors
+
+=over 4
+
+=item Net::Domain::SMD::File-E<gt>B<fromFile>(FILENAME, OPTIONS)
+
+ -Option --Default
+  schemas  <required>
+
+=over 2
+
+=item schemas => SCHEMAS
+
+=back
+
+=item Net::Domain::SMD::File-E<gt>B<new>(OPTIONS)
+
+ -Option  --Default
+  filename  <required>
+
+=over 2
+
+=item filename => FILENAME
+
+=back
+
+=back
+
+=head2 Attributes
+
+=over 4
+
+=item $obj-E<gt>B<filename>()
+
+=item $obj-E<gt>B<labels>()
+
+Returns a list of u-labels.
+
+=item $obj-E<gt>B<marks>()
+
+Returns the marks named in the "Marks" field.  The name insinuates that
+this field may contains multiple values, but the format of this field
+is not described in the spec.
+
+=item $obj-E<gt>B<payload>()
+
+Returns the XML::LibXML::Document contained in the file.
+
+=back
+
+=head2 XML content access
+
+The following methods try to be smart, to hide complexities in the XML
+structure, simplifying the main program.
+
+=over 4
+
+=item $obj-E<gt>B<courts>()
+
+Returns a list of HASHes, each representing one court.
+See F<examples/mark-templ.pl>
+
+example: 
+
+  foreach my $court ($smd->courts)
+  {   print $court->{courtName}, "\n";
+      print Dumper $court;
+  }
+
+=item $obj-E<gt>B<date2time>(STRING)
+
+Converts a time string into a time stamp (since epoch).
+
+=item $obj-E<gt>B<from>()
+
+Returns the timestamp reflecting the 'notBefore' field.
+
+=item $obj-E<gt>B<fromTime>()
+
+The value of L<from()|Net::Domain::SMD::File/"XML content access"> converted into seconds from epoc.
+
+=item $obj-E<gt>B<smdID>()
+
+=item $obj-E<gt>B<trademarks>()
+
+Returns a list of HASHes, each representing one trademark.
+See F<examples/mark-templ.pl>
+
+example: 
+
+  foreach my $trademark ($smd->trademarks)
+  {   print $trademark->{markName}, "\n";
+      my $holders = $trademark->{holder} || [];
+      foreach my $holder (@$holders)
+      {  print "Holder: $holder->{name}\n";
+      }
+  }
+
+=item $obj-E<gt>B<treaties>()
+
+Returns a list of HASHes, each representing one treaty or statute (one
+element of type "treatyOrStatute".  See F<examples/mark-templ.pl>
+
+=item $obj-E<gt>B<until>()
+
+Returns the timestamp reflecting the 'notAfter' field.
+
+=item $obj-E<gt>B<untilTime>()
+
+The value of L<until()|Net::Domain::SMD::File/"XML content access"> converted into seconds from epoc.
+
+=back
+
+=head2 Certificates
+
+=over 4
+
+=item $obj-E<gt>B<certificates>(OPTIONS)
+
+Returns the certificates as contained in the SMD file.
+
+ -Option--Default
+  issuer  <any issuer>
+
+=over 2
+
+=item issuer => NAME
+
+=back
+
+=back
+
+=head1 SEE ALSO
+
+This module is part of Net-Domain-TMCH distribution version 0.11,
+built on October 11, 2013. Website: F<http://perl.overmeer.net/xml-compile/>
+
+Other distributions in this suite:
+L<XML::Compile>,
+L<XML::Compile::SOAP>,
+L<XML::Compile::SOAP12>,
+L<XML::Compile::SOAP::Daemon>,
+L<XML::Compile::SOAP::WSA>,
+L<XML::Compile::C14N>,
+L<XML::Compile::WSS>,
+L<XML::Compile::WSS::Signature>,
+L<XML::Compile::Tester>,
+L<XML::Compile::Cache>,
+L<XML::Compile::Dumper>,
+L<XML::Compile::RPC>,
+L<XML::Rewrite>
+and
+L<XML::LibXML::Simple>.
+
+Please post questions or ideas to the mailinglist at
+F<http://lists.scsys.co.uk/cgi-bin/mailman/listinfo/xml-compile> .
+For live contact with other developers, visit the C<#xml-compile> channel
+on C<irc.perl.org>.
+
+=head1 LICENSE
+
+Copyrights 2013 by [Mark Overmeer]. For other contributors see ChangeLog.
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+See F<http://www.perl.com/perl/misc/Artistic.html>
+

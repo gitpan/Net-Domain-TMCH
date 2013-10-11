@@ -1,0 +1,92 @@
+=encoding utf8
+
+=head1 NAME
+
+Net::Domain::SMD - Mark and Signed-Mark Objects Mapping
+
+=head1 INHERITANCE
+
+ Net::Domain::SMD
+   is a Exporter
+
+=head1 SYNOPSIS
+
+  my $smd  = Net::Domain::SMD->new(%options);
+  my $info = $smd->read($fn);
+
+=head1 DESCRIPTION
+
+Draft RFC L<http://tools.ietf.org/html/draft-lozano-tmch-smd-02>
+specifies a way for TLD (domain registries) to exchange mark
+rights (brand registrations).  This module unpack these files.
+
+=head1 METHODS
+
+=head2 Constructors
+
+=over 4
+
+=item Net::Domain::SMD-E<gt>B<new>(OPTIONS)
+
+ -Option --Default
+  prepare  'READER'
+
+=over 2
+
+=item prepare => 'NONE'|'READER'
+
+=back
+
+=back
+
+=head2 Attributes
+
+=over 4
+
+=item $obj-E<gt>B<schemas>()
+
+=back
+
+=head2 Actions
+
+=over 4
+
+=item $obj-E<gt>B<read>(FILENAME)
+
+=back
+
+=head1 SEE ALSO
+
+This module is part of Net-Domain-TMCH distribution version 0.11,
+built on October 11, 2013. Website: F<http://perl.overmeer.net/xml-compile/>
+
+Other distributions in this suite:
+L<XML::Compile>,
+L<XML::Compile::SOAP>,
+L<XML::Compile::SOAP12>,
+L<XML::Compile::SOAP::Daemon>,
+L<XML::Compile::SOAP::WSA>,
+L<XML::Compile::C14N>,
+L<XML::Compile::WSS>,
+L<XML::Compile::WSS::Signature>,
+L<XML::Compile::Tester>,
+L<XML::Compile::Cache>,
+L<XML::Compile::Dumper>,
+L<XML::Compile::RPC>,
+L<XML::Rewrite>
+and
+L<XML::LibXML::Simple>.
+
+Please post questions or ideas to the mailinglist at
+F<http://lists.scsys.co.uk/cgi-bin/mailman/listinfo/xml-compile> .
+For live contact with other developers, visit the C<#xml-compile> channel
+on C<irc.perl.org>.
+
+=head1 LICENSE
+
+Copyrights 2013 by [Mark Overmeer]. For other contributors see ChangeLog.
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+See F<http://www.perl.com/perl/misc/Artistic.html>
+

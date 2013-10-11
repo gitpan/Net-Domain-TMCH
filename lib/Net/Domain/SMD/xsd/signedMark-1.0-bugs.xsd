@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+  targetNamespace="urn:ietf:params:xml:ns:signedMark-1.0"
+  xmlns:smd="urn:ietf:params:xml:ns:signedMark-1.0"
+  xmlns:mark="urn:ietf:params:xml:ns:mark-1.0"
+  xmlns:dsig="http://www.w3.org/2000/09/xmldsig#"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
+
+  <complexType name="abstractSignedMarkType">
+    <sequence/>
+  </complexType>
+
+</schema>
