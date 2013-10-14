@@ -18,9 +18,12 @@ Net::Domain::TMCH - TradeMark Clearing House
 =head1 DESCRIPTION
 
 Draft RFC L<http://tools.ietf.org/html/draft-lozano-tmch-func-07>
-specifies a way for TLD (domain registries) to exchange trademark right
-information (brand registrations).  This module manages the verification
-process of these files.
+specifies a way for TLD (domain registries) to exchange information
+about trademark rights, brand registrations.
+
+This module manages the verification process of "SMD"-files, each
+containing a crypto-signed XML structure of information related to
+a single trademark claim.
 
 =head1 METHODS
 
@@ -82,6 +85,9 @@ TMCH certificates.
 
 =item $obj-E<gt>B<smd>(FILENAME, OPTIONS)
 
+Returns a L<Net::Domain::SMD::File|Net::Domain::SMD::File> object, reflecting what is kept inside
+the named file.  C<undef> is returned when something is wrong.
+
  -Option            --Default
   accept_expired      <false>
   trust_certificates  <false>
@@ -89,6 +95,10 @@ TMCH certificates.
 =over 2
 
 =item accept_expired => BOOLEAN
+
+When true, you will be able to access expired SMD files.  This is
+especially useful in regression tests, or when you process ancient
+SMD files.
 
 =item trust_certificates => BOOLEAN
 
@@ -105,30 +115,14 @@ example:
 
 =head1 SEE ALSO
 
-This module is part of Net-Domain-TMCH distribution version 0.11,
-built on October 11, 2013. Website: F<http://perl.overmeer.net/xml-compile/>
+This module is part of Net-Domain-TMCH distribution version 0.12,
+built on October 14, 2013.  Development was supported by NIC.at, the Austrian
+Domainname Registry.
 
-Other distributions in this suite:
-L<XML::Compile>,
-L<XML::Compile::SOAP>,
-L<XML::Compile::SOAP12>,
-L<XML::Compile::SOAP::Daemon>,
-L<XML::Compile::SOAP::WSA>,
-L<XML::Compile::C14N>,
-L<XML::Compile::WSS>,
-L<XML::Compile::WSS::Signature>,
-L<XML::Compile::Tester>,
-L<XML::Compile::Cache>,
-L<XML::Compile::Dumper>,
-L<XML::Compile::RPC>,
-L<XML::Rewrite>
-and
-L<XML::LibXML::Simple>.
+ Website: F<http://perl.overmeer.net/net-domain-tmch/>
 
-Please post questions or ideas to the mailinglist at
-F<http://lists.scsys.co.uk/cgi-bin/mailman/listinfo/xml-compile> .
-For live contact with other developers, visit the C<#xml-compile> channel
-on C<irc.perl.org>.
+The documentation and interface style is consistent with a large set of
+modules, belonging to the L<XML::Compile> suite.
 
 =head1 LICENSE
 

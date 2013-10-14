@@ -7,7 +7,7 @@ use strict;
 
 package Net::Domain::SMD::File;
 use vars '$VERSION';
-$VERSION = '0.11';
+$VERSION = '0.12';
 
 use Log::Report   'net-domain-smd';
 
@@ -107,6 +107,7 @@ sub issuer()
     \%issuer;
 }
 
+#----------------
 
 sub courts()  { @{shift->_mark->{court} || []} }
 
@@ -116,6 +117,18 @@ sub trademarks()  { @{shift->_mark->{trademark} || []} }
 
 sub treaties()  { @{shift->_mark->{treatyOrStatute} || []} }
 
+
+sub certificates(%)
+{   my ($self, %args) = @_;
+
+    my $tokens = $self->_data->{ds_Signature}{ds_KeyInfo}{__TOKENS} || [];
+    my @certs  = map $_->certificate, @$tokens;
+
+    my $issuer = $args{issuer};
+    $issuer ? (grep $_->subject eq $issuer, @certs) : @certs;
+}
+
+#----------------
 
 sub date2time($)
 {   my ($self, $date) = @_;
@@ -133,18 +146,6 @@ sub date2time($)
     tzset;
 
     $sec;
-}
-
-#---------------
-
-sub certificates(%)
-{   my ($self, %args) = @_;
-
-    my $tokens = $self->_data->{ds_Signature}{ds_KeyInfo}{__TOKENS} || [];
-    my @certs  = map $_->certificate, @$tokens;
-
-    my $issuer = $args{issuer};
-    $issuer ? (grep $_->subject eq $issuer, @certs) : @certs;
 }
 
 1;

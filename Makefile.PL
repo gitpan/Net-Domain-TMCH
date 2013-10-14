@@ -2,7 +2,7 @@ use ExtUtils::MakeMaker;
 
 use 5.010;
 
-my $version = '0.11';
+my $version = '0.12';
 
 WriteMakefile
  ( NAME	 	=> 'Net::Domain::TMCH'
@@ -45,6 +45,6 @@ SKIP_LINKS	= XML::LibXML
 FIRST_YEAR      = 2013
 EMAIL           = perl@overmeer.net
 EXTENDS         = ../XMLCompile:../XMLCache:../XMLC14N:../WSSSIG
-WEBSITE         = http://perl.overmeer.net/xml-compile/
-PODTAIL		= ../XML-shared-podtail
+WEBSITE         = http://perl.overmeer.net/net-domain-tmch/
+PODTAIL		= PODTAIL.txt
 __POSTAMBLE

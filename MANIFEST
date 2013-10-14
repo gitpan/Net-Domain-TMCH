@@ -1,6 +1,7 @@
 ChangeLog
 MANIFEST
 Makefile.PL
+PODTAIL.txt
 README
 bin/tmch
 docs/draft-lozano-tmch-func-spec-07.txt

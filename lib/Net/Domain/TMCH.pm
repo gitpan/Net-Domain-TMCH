@@ -7,7 +7,7 @@ use strict;
 
 package Net::Domain::TMCH;
 use vars '$VERSION';
-$VERSION = '0.11';
+$VERSION = '0.12';
 
 use base 'Exporter';
 

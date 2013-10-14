@@ -6,6 +6,11 @@ Net::Domain::SMD::File - Info from one SMD file
 
 =head1 SYNOPSIS
 
+  # end-user route to collect the info
+  my $tmch  = Net::Domain::TMCH->new(%options);
+  my $smdf  = $tmch->smd($filename);
+
+  # use by TMCH internally
   my $smd  = Net::Domain::SMD->new(%options);
   my $smdf = $smd->read($fn);
 
@@ -67,12 +72,52 @@ Returns the XML::LibXML::Document contained in the file.
 
 =back
 
+=head2 File header access
+
+The SMD-file contains a header, wrapping the XML content.  The next
+methods provide access to that header information.
+
+=over 4
+
+=item $obj-E<gt>B<from>()
+
+Returns the timestamp reflecting the 'notBefore' field.
+
+=item $obj-E<gt>B<fromTime>()
+
+The value of L<from()|Net::Domain::SMD::File/"File header access"> converted into seconds from epoc.
+
+=item $obj-E<gt>B<smdID>()
+
+=item $obj-E<gt>B<until>()
+
+Returns the timestamp reflecting the 'notAfter' field.
+
+=item $obj-E<gt>B<untilTime>()
+
+The value of L<until()|Net::Domain::SMD::File/"File header access"> converted into seconds from epoc.
+
+=back
+
 =head2 XML content access
 
 The following methods try to be smart, to hide complexities in the XML
 structure, simplifying the main program.
 
 =over 4
+
+=item $obj-E<gt>B<certificates>(OPTIONS)
+
+Returns the certificates as contained in the SMD file.
+
+ -Option--Default
+  issuer  <any issuer>
+
+=over 2
+
+=item issuer => NAME
+
+=back
 
 =item $obj-E<gt>B<courts>()
 
@@ -85,20 +130,6 @@ example:
   {   print $court->{courtName}, "\n";
       print Dumper $court;
   }
-
-=item $obj-E<gt>B<date2time>(STRING)
-
-Converts a time string into a time stamp (since epoch).
-
-=item $obj-E<gt>B<from>()
-
-Returns the timestamp reflecting the 'notBefore' field.
-
-=item $obj-E<gt>B<fromTime>()
-
-The value of L<from()|Net::Domain::SMD::File/"XML content access"> converted into seconds from epoc.
-
-=item $obj-E<gt>B<smdID>()
 
 =item $obj-E<gt>B<trademarks>()
 
@@ -120,61 +151,28 @@ example:
 Returns a list of HASHes, each representing one treaty or statute (one
 element of type "treatyOrStatute".  See F<examples/mark-templ.pl>
 
-=item $obj-E<gt>B<until>()
-
-Returns the timestamp reflecting the 'notAfter' field.
-
-=item $obj-E<gt>B<untilTime>()
-
-The value of L<until()|Net::Domain::SMD::File/"XML content access"> converted into seconds from epoc.
-
 =back
 
-=head2 Certificates
+=head2 Helpers
 
 =over 4
 
-=item $obj-E<gt>B<certificates>(OPTIONS)
+=item $obj-E<gt>B<date2time>(STRING)
 
-Returns the certificates as contained in the SMD file.
-
- -Option--Default
-  issuer  <any issuer>
-
-=over 2
-
-=item issuer => NAME
-
-=back
+Converts a time string into a time stamp (since epoch).
 
 =back
 
 =head1 SEE ALSO
 
-This module is part of Net-Domain-TMCH distribution version 0.11,
-built on October 11, 2013. Website: F<http://perl.overmeer.net/xml-compile/>
+This module is part of Net-Domain-TMCH distribution version 0.12,
+built on October 14, 2013.  Development was supported by NIC.at, the Austrian
+Domainname Registry.
 
-Other distributions in this suite:
-L<XML::Compile>,
-L<XML::Compile::SOAP>,
-L<XML::Compile::SOAP12>,
-L<XML::Compile::SOAP::Daemon>,
-L<XML::Compile::SOAP::WSA>,
-L<XML::Compile::C14N>,
-L<XML::Compile::WSS>,
-L<XML::Compile::WSS::Signature>,
-L<XML::Compile::Tester>,
-L<XML::Compile::Cache>,
-L<XML::Compile::Dumper>,
-L<XML::Compile::RPC>,
-L<XML::Rewrite>
-and
-L<XML::LibXML::Simple>.
+ Website: F<http://perl.overmeer.net/net-domain-tmch/>
 
-Please post questions or ideas to the mailinglist at
-F<http://lists.scsys.co.uk/cgi-bin/mailman/listinfo/xml-compile> .
-For live contact with other developers, visit the C<#xml-compile> channel
-on C<irc.perl.org>.
+The documentation and interface style is consistent with a large set of
+modules, belonging to the L<XML::Compile> suite.
 
 =head1 LICENSE
 

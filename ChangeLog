@@ -1,5 +1,10 @@
 ========== version history of Net::Domain::TMCH
 
+version 0.12: Mon Oct 14 09:55:04 CEST 2013
+	Improvements:
+	- a bit more documentation.
+	- better documentation footer.
+
 version 0.11: Fri Oct 11 16:02:33 CEST 2013
 	- new option $tmch->smd(trust_certificates)
 	- report error when file does not contain smd
