@@ -118,6 +118,16 @@ example:
       print Dumper $court;
   }
 
+=item $obj-E<gt>B<from>()
+
+Returns the timestamp reflecting the 'notBefore' field, as string.
+When "auto_datetime" is enabled, this will return a DateTime
+object.
+
+=item $obj-E<gt>B<fromTime>()
+
+The value of L<from()|Net::Domain::SMD/"XML content access"> converted into seconds from epoch.
+
 =item $obj-E<gt>B<issuer>()
 
 Returns the issuer information, as a HASH.
@@ -142,6 +152,16 @@ example:
 Returns a list of HASHes, each representing one treaty or statute (one
 element of type "treatyOrStatute".  See F<examples/mark-templ.pl>
 
+=item $obj-E<gt>B<until>()
+
+Returns the timestamp reflecting the 'notAfter' field, as string.
+When "auto_datetime" is enabled, this will return a DateTime
+object.
+
+=item $obj-E<gt>B<untilTime>()
+
+The value of L<until()|Net::Domain::SMD/"XML content access"> converted into seconds from epoc.
+
 =back
 
 =head2 Helpers
@@ -160,7 +180,7 @@ inside an object.
 
 =head1 SEE ALSO
 
-This module is part of Net-Domain-TMCH distribution version 0.13,
+This module is part of Net-Domain-TMCH distribution version 0.14,
 built on October 28, 2013.  Development was supported by NIC.at, the Austrian
 Domainname Registry.
 

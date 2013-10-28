@@ -1,5 +1,10 @@
 ========== version history of Net::Domain::TMCH
 
+version 0.14: Mon Oct 28 11:10:30 CET 2013
+	Improvements:
+	- move from(), until(), fromTime(), and untilTime() from ::SMD::File
+	  to its base-class ::SMD.
+
 version 0.13: Mon Oct 28 10:53:32 CET 2013
 	Changes:
 	- moved ::SMD into ::SMD::Schema

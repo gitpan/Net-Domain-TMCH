@@ -7,7 +7,7 @@ use strict;
 
 package Net::Domain::SMD;
 use vars '$VERSION';
-$VERSION = '0.13';
+$VERSION = '0.14';
 
 use Log::Report   'net-domain-smd';
 
@@ -80,6 +80,12 @@ sub issuer()
     }
     \%issuer;
 }
+
+
+sub from()      {shift->data->{smd_notBefore}}
+sub until()     {shift->data->{smd_notAfter}}
+sub fromTime()  {my $s = shift; $s->date2time($s->from)->hires_epoch}
+sub untilTime() {my $s = shift; $s->date2time($s->until)->hires_epoch}
 
 #----------------
 

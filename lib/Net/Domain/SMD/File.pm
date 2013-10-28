@@ -7,7 +7,7 @@ use strict;
 
 package Net::Domain::SMD::File;
 use vars '$VERSION';
-$VERSION = '0.13';
+$VERSION = '0.14';
 
 use parent 'Net::Domain::SMD';
 
@@ -86,11 +86,5 @@ sub marks()     { @{shift->{NDSF_marks}  || []} }
 #----------------
 
 sub smdID()     {shift->data->{smd_id}}
-sub from()      {shift->data->{smd_notBefore}}
-sub until()     {shift->data->{smd_notAfter}}
-sub fromTime()      {shift->fromDateTime->hires_epoch}
-sub untilTime()     {shift->untilDateTime->hires_epoch}
-sub fromDateTime()  {my $s = shift; $s->date2time($s->from)}
-sub untilDateTime() {my $s = shift; $s->date2time($s->until)}
 
 1;

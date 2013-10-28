@@ -114,6 +114,14 @@ See L<Net::Domain::SMD/"XML content access">
 
 See L<Net::Domain::SMD/"XML content access">
 
+=item $obj-E<gt>B<from>()
+
+See L<Net::Domain::SMD/"XML content access">
+
+=item $obj-E<gt>B<fromTime>()
+
+See L<Net::Domain::SMD/"XML content access">
+
 =item $obj-E<gt>B<issuer>()
 
 See L<Net::Domain::SMD/"XML content access">
@@ -123,6 +131,14 @@ See L<Net::Domain::SMD/"XML content access">
 See L<Net::Domain::SMD/"XML content access">
 
 =item $obj-E<gt>B<treaties>()
+
+See L<Net::Domain::SMD/"XML content access">
+
+=item $obj-E<gt>B<until>()
+
+See L<Net::Domain::SMD/"XML content access">
+
+=item $obj-E<gt>B<untilTime>()
 
 See L<Net::Domain::SMD/"XML content access">
 
@@ -149,37 +165,13 @@ methods provide access to that header information.
 
 =over 4
 
-=item $obj-E<gt>B<from>()
-
-Returns the timestamp reflecting the 'notBefore' field, as string.
-
-=item $obj-E<gt>B<fromDateTime>()
-
-The value of L<from()|Net::Domain::SMD::File/"File header access"> converted into an DateTime object.
-
-=item $obj-E<gt>B<fromTime>()
-
-The value of L<from()|Net::Domain::SMD::File/"File header access"> converted into seconds from epoch.
-
 =item $obj-E<gt>B<smdID>()
-
-=item $obj-E<gt>B<until>()
-
-Returns the timestamp reflecting the 'notAfter' field, as string.
-
-=item $obj-E<gt>B<untilDateTime>()
-
-The value of L<until()|Net::Domain::SMD::File/"File header access"> converted into an DateTime object.
-
-=item $obj-E<gt>B<untilTime>()
-
-The value of L<until()|Net::Domain::SMD::File/"File header access"> converted into seconds from epoc.
 
 =back
 
 =head1 SEE ALSO
 
-This module is part of Net-Domain-TMCH distribution version 0.13,
+This module is part of Net-Domain-TMCH distribution version 0.14,
 built on October 28, 2013.  Development was supported by NIC.at, the Austrian
 Domainname Registry.
 
