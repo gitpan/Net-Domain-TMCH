@@ -7,7 +7,9 @@ use strict;
 
 package Net::Domain::SMD::File;
 use vars '$VERSION';
-$VERSION = '0.12';
+$VERSION = '0.13';
+
+use parent 'Net::Domain::SMD';
 
 use Log::Report   'net-domain-smd';
 
@@ -18,27 +20,29 @@ use XML::Compile::Util qw/type_of_node/;
 use List::Util         qw/first/;
 
 
-sub new($%) { my ($class, %args) = @_; (bless {}, $class)->init(\%args) }
 sub init($)
 {   my ($self, $args) = @_;
+    $self->SUPER::init($args);
 
     # Clean object construction is needed when we are going to write
     # SMD files... but we won't for now.
+    $self->{NDSF_fn}     = $args->{filename} or panic;
+    $self->{NDSF_marks}  = $args->{marks};
+    $self->{NDSF_labels} = $args->{labels};
     $self;
 }
 
 
 sub fromFile($%)
 {   my ($class, $fn, %args) = @_;
-    my $self   = $class->new(%args);
 
-    $self->{NDSF_fn} = $fn;
     my $schemas = $args{schemas} or panic;
 
     open my($fh), '<:raw', $fn
-        or fault "cannot read from smd file {fn}", fn => $fn;
+        or fault __x"cannot read from smd file {fn}", fn => $fn;
 
     my $xml;
+    my ($marks, $labels);
   LINE:
     while(<$fh>)
     {   next LINE if m/^#|^\s*$/;   # not yet permitted in those files
@@ -58,10 +62,10 @@ sub fromFile($%)
         $label = lc $label;
         $value =~ s/\s*$//s;
         if($label eq 'u-labels')
-        {   $self->{NDSF_labels} = [split /\s*\,\s*/, $value];
+        {   $labels = [split /\s*\,\s*/, $value];
         }
         elsif($label eq 'marks')  # trademark names?  Comma list?
-        {   $self->{NDSF_marks}  =  [split /\s*\,\s*/, $value];
+        {   $marks  =  [split /\s*\,\s*/, $value];
         }
 
     }
@@ -69,83 +73,24 @@ sub fromFile($%)
     $xml or error __x"there is not SMD information in {fn}", fn => $fn;
 
     my $root = $schemas->dataToXML($xml);
-    $self->{NDSF_payload} = $root;
-    my $type = type_of_node $root;
-#warn $root;
-
-    my $data = $schemas->reader($type)->($root);
-    $self->{NDSF_data}  = $data;
-    $self;
+    $class->fromNode($root, filename => $fn, marks => $marks
+      , labels => $labels, %args);
 }
     
 #----------------
 
 sub filename()  {shift->{NDSF_fn}}
-sub payload()   {shift->{NDSF_payload}}
 sub labels()    { @{shift->{NDSF_labels} || []} }
 sub marks()     { @{shift->{NDSF_marks}  || []} }
 
-sub _data()     {shift->{NDSF_data}}     # hidden
-sub _mark()     {shift->_data->{mark}}     # hidden
-
 #----------------
 
-sub smdID()     {shift->_data->{smd_id}}
-sub from()      {shift->_data->{smd_notBefore}}
-sub until()     {shift->_data->{smd_notAfter}}
-sub fromTime()  {my $s = shift; $s->date2time($s->from)}
-sub untilTime() {my $s = shift; $s->date2time($s->until)}
-
-sub issuer()
-{   my $i = shift->_data->{smd_issuerInfo} or return;
-    # remove smd namespace prefixes
-    my %issuer;
-    while(my($k, $v) = each %$i)
-    {   $k =~ s/smd_//;
-        $issuer{$k} = $v;
-    }
-    \%issuer;
-}
-
-#----------------
-
-sub courts()  { @{shift->_mark->{court} || []} }
-
-
-sub trademarks()  { @{shift->_mark->{trademark} || []} }
-
-
-sub treaties()  { @{shift->_mark->{treatyOrStatute} || []} }
-
-
-sub certificates(%)
-{   my ($self, %args) = @_;
-
-    my $tokens = $self->_data->{ds_Signature}{ds_KeyInfo}{__TOKENS} || [];
-    my @certs  = map $_->certificate, @$tokens;
-
-    my $issuer = $args{issuer};
-    $issuer ? (grep $_->subject eq $issuer, @certs) : @certs;
-}
-
-#----------------
-
-sub date2time($)
-{   my ($self, $date) = @_;
-    # For now, I only support Zulu time: 2013-07-12T12:53:48.408Z
-    $date =~ m/^([0-9]{4})\-([0-1]?[0-9])\-([0-3]?[0-9])T([0-2]?[0-9])\:([0-5]?[0-9])\:([0-6]?[0-9])(\.[0-9]+)?Z?$/ or return;
-
-    my $oldtz = $ENV{TZ};
-    $ENV{TZ}  = 'UTC';
-    tzset;
-
-    my $sec = mktime $6, $5, $4, $3, $2-1, $1-1900;
-    $sec += $7 if defined $7;
-
-    $ENV{TZ} = $oldtz;
-    tzset;
-
-    $sec;
-}
+sub smdID()     {shift->data->{smd_id}}
+sub from()      {shift->data->{smd_notBefore}}
+sub until()     {shift->data->{smd_notAfter}}
+sub fromTime()      {shift->fromDateTime->hires_epoch}
+sub untilTime()     {shift->untilDateTime->hires_epoch}
+sub fromDateTime()  {my $s = shift; $s->date2time($s->from)}
+sub untilDateTime() {my $s = shift; $s->date2time($s->until)}
 
 1;

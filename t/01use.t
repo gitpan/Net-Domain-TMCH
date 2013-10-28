@@ -4,7 +4,7 @@ use strict;
 
 use lib 'lib', '../WSSSIG/lib', '../XMLWSS/lib';
 
-use Test::More tests => 5;
+use Test::More tests => 6;
 
 # The versions of the following packages are reported to help understanding
 # the environment in which the tests are run.  This is certainly not a
@@ -35,5 +35,6 @@ foreach my $package (@show_versions)
 require_ok('Net::Domain::TMCH');
 require_ok('Net::Domain::TMCH::CRL');
 require_ok('Net::Domain::SMD');
+require_ok('Net::Domain::SMD::Schema');
 require_ok('Net::Domain::SMD::File');
 require_ok('Net::Domain::SMD::RL');

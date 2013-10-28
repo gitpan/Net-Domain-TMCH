@@ -12,13 +12,13 @@ my $mark_example = "examples/mark-templ.pl";
 
 use File::Slurp  qw/write_file/;
 
-use Net::Domain::SMD ':ns10';
+use Net::Domain::SMD::Schema ':ns10';
 like(SMD10_NS, qr/^urn\:/);
 like(MARK10_NS, qr/^urn\:/);
 
-my $smd = Net::Domain::SMD->new(prepare => 'NONE');
+my $smd = Net::Domain::SMD::Schema->new(prepare => 'NONE');
 ok(defined $smd, 'instantiate smd object');
-isa_ok($smd, 'Net::Domain::SMD');
+isa_ok($smd, 'Net::Domain::SMD::Schema');
 
 my $schemas = $smd->schemas;
 isa_ok($schemas, 'XML::Compile::Cache');

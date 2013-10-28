@@ -16,6 +16,8 @@ lib/Net/Domain/SMD/File.pm
 lib/Net/Domain/SMD/File.pod
 lib/Net/Domain/SMD/RL.pm
 lib/Net/Domain/SMD/RL.pod
+lib/Net/Domain/SMD/Schema.pm
+lib/Net/Domain/SMD/Schema.pod
 lib/Net/Domain/SMD/xsd/mark-1.0-bugs.xsd
 lib/Net/Domain/SMD/xsd/mark-1.0.xsd
 lib/Net/Domain/SMD/xsd/signedMark-1.0-bugs.xsd
@@ -36,6 +38,8 @@ t/10templ.t
 t/20ok.smd
 t/20parse.t
 t/30tmch.t
+t/40epp.t
+t/40epp.xml
 t/smd-test-revocation-15jul13-en.csv
 t/tmch_pilot.crl
 test/testset-20130715/smd-active/Court-Agent-Arabic-Active.smd

@@ -11,17 +11,20 @@ Net::Domain::SMD::RL - SMD Revokation List
 
 =head1 SYNOPSIS
 
-  my $crl  = Net::Domain::SMD::RL->fromFile($fn, %options);
-  my $crl  = Net::Domain::SMD::RL->fromURI($uri, %options);
+  my $srl  = Net::Domain::SMD::RL->new(revoked => \@serials
+     , source => 'database table xyz');
 
-  if($rl->isRevoked($smd)) ...
-  if($rl->isRevoked($smd)) ...
+  my $srl  = Net::Domain::SMD::RL->fromFile($fn, %options);
+  my $srl  = Net::Domain::SMD::RL->fromURI($uri, %options);
+
+  if($srl->isRevoked($smd)) ...
+  if($srl->isRevoked($smd)) ...
 
   my $tmch = Net::Domain::TMCH->new
     ( ...
-    , smd_revocations => ...
+    , smd_revocations => \@srls   # or $srl
     );
-  my @rl = $tmch->smdRevocations;
+  my @srl = $tmch->smdRevocations;
 
 =head1 DESCRIPTION
 
@@ -86,8 +89,8 @@ and such.
 
 =head1 SEE ALSO
 
-This module is part of Net-Domain-TMCH distribution version 0.12,
-built on October 14, 2013.  Development was supported by NIC.at, the Austrian
+This module is part of Net-Domain-TMCH distribution version 0.13,
+built on October 28, 2013.  Development was supported by NIC.at, the Austrian
 Domainname Registry.
 
  Website: F<http://perl.overmeer.net/net-domain-tmch/>

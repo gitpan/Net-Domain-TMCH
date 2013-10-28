@@ -1,5 +1,5 @@
-=== README for Net-Domain-TMCH version 0.11
-=   Generated on Fri Oct 11 16:03:35 2013 by OODoc 2.01
+=== README for Net-Domain-TMCH version 0.13
+=   Generated on Mon Oct 28 10:53:39 2013 by OODoc 2.01
 
 There are various ways to install this module:
 
@@ -9,16 +9,16 @@ There are various ways to install this module:
  (2) if you use Windows, have a look at http://ppm.activestate.com/
 
  (3) if you have downloaded this module manually (as root/administrator)
-       gzip -d Net-Domain-TMCH-0.11.tar.gz
-       tar -xf Net-Domain-TMCH-0.11.tar
-       cd Net-Domain-TMCH-0.11
+       gzip -d Net-Domain-TMCH-0.13.tar.gz
+       tar -xf Net-Domain-TMCH-0.13.tar
+       cd Net-Domain-TMCH-0.13
        perl Makefile.PL
        make          # optional
        make test     # optional
        make install
 
 For usage, see the included manual-pages or
-    http://search.cpan.org/dist/Net-Domain-TMCH-0.11/
+    http://search.cpan.org/dist/Net-Domain-TMCH-0.13/
 
 Please report problems to
     http://rt.cpan.org/Dist/Display.html?Queue=Net-Domain-TMCH

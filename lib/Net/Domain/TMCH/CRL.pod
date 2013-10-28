@@ -15,14 +15,17 @@ Net::Domain::TMCH::CRL - TMCH Certificates Revokation List
 
   my $tmch = Net::Domain::TMCH->new
     ( ...
-    , revocation_list => $fn    # or $uri
+    , cert_revocations => $fn    # or $uri
     );
   $crl = $tmch->crl;
 
-  # Internal usage
+  # create explicitly
 
   my $crl  = Net::Domain::TMCH::CRL->fromFile($fn, %options);
   my $crl  = Net::Domain::TMCH::CRL->fromURI($uri, %options);
+  my $crl  = Net::Domain::TMCH::CRL->new(source => 'hardcoded'
+    , revoked => \@serials);
+  my $tmch = Net::Domain::TMCH->new(..., cert_revocations => $crl);
 
   if($crl->isRevoked($certificate)) ...
   if($crl->isRevoked($certificate->serial)) ...
@@ -93,8 +96,8 @@ revoked.  It is sufficient to provide a SERIAL number of the certificate.
 
 =head1 SEE ALSO
 
-This module is part of Net-Domain-TMCH distribution version 0.12,
-built on October 14, 2013.  Development was supported by NIC.at, the Austrian
+This module is part of Net-Domain-TMCH distribution version 0.13,
+built on October 28, 2013.  Development was supported by NIC.at, the Austrian
 Domainname Registry.
 
  Website: F<http://perl.overmeer.net/net-domain-tmch/>

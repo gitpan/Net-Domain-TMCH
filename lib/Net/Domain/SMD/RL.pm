@@ -7,7 +7,7 @@ use strict;
 
 package Net::Domain::SMD::RL;
 use vars '$VERSION';
-$VERSION = '0.12';
+$VERSION = '0.13';
 
 use base 'Exporter';
 
@@ -23,7 +23,7 @@ sub init($)
     $self->{NDSR_source}  = $args->{source} or panic;
 
     my $rev =  $args->{revoked} || [];
-    $rev = { map +($_ => 1), @$rev} if ref $rev eq 'ARRAY';
+    $rev = +{map +($_ => 1), @$rev} if ref $rev eq 'ARRAY';
     $self->{NDSR_revoked} = $rev;
     $self;
 }

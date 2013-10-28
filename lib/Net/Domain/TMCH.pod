@@ -34,6 +34,7 @@ a single trademark claim.
 =item Net::Domain::TMCH-E<gt>B<new>(OPTIONS)
 
  -Option          --Default
+  auto_datetime     <false>
   cert_revocations  <according to rfc>
   is_pilot          <false>
   smd_admin         <generated internally>
@@ -42,13 +43,18 @@ a single trademark claim.
 
 =over 2
 
-=item cert_revocations => FILENAME|URI
+=item auto_datetime => BOOLEAN
 
-The CRL for invalidated TMV certificates.
+Convert dates in the XML automatically into DateTime objects.
+
+=item cert_revocations => FILENAME|URI|OBJECT
+
+The CRL for invalidated TMV certificates.  You may also provide an
+L<Net::Domain::TMCH::CRL|Net::Domain::TMCH::CRL> object.
 
 =item is_pilot => BOOLEAN
 
-=item smd_admin => L<Net::Domain::SMD|Net::Domain::SMD>-object
+=item smd_admin => L<Net::Domain::SMD::Schema|Net::Domain::SMD::Schema>-object
 
 =item smd_revocations => FILENAME|URI|ARRAY
 
@@ -83,10 +89,15 @@ TMCH certificates.
 
 =over 4
 
-=item $obj-E<gt>B<smd>(FILENAME, OPTIONS)
+=item $obj-E<gt>B<smd>((FILENAME|XML|STRING), OPTIONS)
 
-Returns a L<Net::Domain::SMD::File|Net::Domain::SMD::File> object, reflecting what is kept inside
-the named file.  C<undef> is returned when something is wrong.
+The first argument can be either a FILENAME (in which case an
+L<Net::Domain::SMD::File|Net::Domain::SMD::File> object is returned, or an XML::LibXML::Element
+or a STRING (bother returning an L<Net::Domain::SMD|Net::Domain::SMD> object).  In either
+case, the returned object reflects what is kept inside the XML.
+
+C<undef> is returned when the data is invalid, for instance because it
+has expired.
 
  -Option            --Default
   accept_expired      <false>
@@ -115,8 +126,8 @@ example:
 
 =head1 SEE ALSO
 
-This module is part of Net-Domain-TMCH distribution version 0.12,
-built on October 14, 2013.  Development was supported by NIC.at, the Austrian
+This module is part of Net-Domain-TMCH distribution version 0.13,
+built on October 28, 2013.  Development was supported by NIC.at, the Austrian
 Domainname Registry.
 
  Website: F<http://perl.overmeer.net/net-domain-tmch/>

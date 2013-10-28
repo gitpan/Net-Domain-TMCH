@@ -7,15 +7,15 @@ use strict;
 
 package Net::Domain::TMCH;
 use vars '$VERSION';
-$VERSION = '0.12';
+$VERSION = '0.13';
 
 use base 'Exporter';
 
 use Log::Report                  'net-domain-smd';
 
-use Net::Domain::SMD       ();
-use Net::Domain::TMCH::CRL ();
-use Net::Domain::SMD::RL   ();
+use Net::Domain::SMD::Schema   ();
+use Net::Domain::TMCH::CRL     ();
+use Net::Domain::SMD::RL       ();
 
 use Crypt::OpenSSL::VerifyX509 ();
 use Crypt::OpenSSL::X509   ();
@@ -33,11 +33,15 @@ sub new($%) { my ($class, %args) = @_; (bless {}, $class)->init(\%args) }
 
 sub init($)
 {   my ($self, $args) = @_;
-    $self->{NDT_smds} = $args->{smds_admin}
-      || Net::Domain::SMD->new(prepare => 'READER');
+    $self->{NDT_smds} = $args->{smds_admin} ||
+        Net::Domain::SMD::Schema->new
+         ( prepare       => 'READER'
+         , auto_datetime => $args->{auto_datetime}
+         );
 
     my $stage    = $self->{NDT_pilot}
       = $args->{is_pilot} ? 'tmch_pilot' : 'tmch';
+
     my $tmch_pem = $args->{tmch_certificate}
      || catfile dirname(__FILE__), 'TMCH', 'icann', "$stage.pem";
 
@@ -108,9 +112,9 @@ sub smdRevocations() { @{shift->{NDT_smdrl}} }
 
 
 sub smd($%)
-{   my ($self, $filename, %args) = @_;
+{   my ($self, $xml, %args) = @_;
 
-    my $smd = $self->smdAdmin->read($filename);
+    my ($smd, $source) = $self->smdAdmin->from($xml);
     return $smd
         if !$smd || $args{trust_certificates};
 
@@ -118,22 +122,23 @@ sub smd($%)
 
     my ($tmv_cert) = $smd->certificates(issuer => $tmch_cert->subject);
     defined $tmv_cert
-        or error __x"smd in {fn} does not contain an TMV certificate"
-             , fn => $filename;
+        or error __x"smd in {source} does not contain an TMV certificate"
+             , source => $source;
 
     $self->tmchCA->verify($tmv_cert)
-        or error __x"invalig TMV certificate in {fn}", fn => $filename;
+        or error __x"invalid TMV certificate in {source}", source => $source;
 
     $args{accept_expired} || ! $tmv_cert->checkend(0)
-        or error __x"the TMV certificate in {fn} has expired", fn => $filename;
+        or error __x"the TMV certificate in {source} has expired"
+             , source => $source;
 
     $self->certRevocations->isRevoked($tmv_cert)
-        and error __x"smd in {fn} contains revoked TMV certificate"
-             , fn => $filename;
+        and error __x"smd in {source} contains revoked TMV certificate"
+             , source => $source;
 
     foreach my $rl ($self->smdRevocations)
-    {   error __x"smd in {fn} is revoked according to {source}"
-          , fn => $filename, source => $rl->source
+    {   error __x"smd in {source} is revoked according to {list}"
+          , source => $source, list => $rl->source
             if $rl->isRevoked($smd);
     }
 

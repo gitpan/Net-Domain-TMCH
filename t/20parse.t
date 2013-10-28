@@ -12,12 +12,12 @@ my $testset  = 'test/testset-20130715';
 # with the other files.
 my $testfile = "t/20ok.smd";
 
-use Net::Domain::SMD ();
+use Net::Domain::SMD::Schema ();
 
-my $smd = Net::Domain::SMD->new;
+my $smd = Net::Domain::SMD::Schema->new;
  
 ok(defined $smd, 'instantiate smd object');
-isa_ok($smd, 'Net::Domain::SMD');
+isa_ok($smd, 'Net::Domain::SMD::Schema');
 
 my $info = $smd->read($testfile);
 ok(defined $info, "parsed testfile $testfile");
@@ -40,7 +40,9 @@ is($info->untilTime, '1499637600', 'until timestamp');
 my $payload = $info->payload;
 ok(defined $payload, 'got payload');
 isa_ok($payload, 'XML::LibXML::Element');
+#warn $payload->toString(1);
 
 use Data::Dumper;
 $Data::Dumper::Indent=1;
+#warn Dumper $info->_mark;
 #warn Dumper [$info->courts];

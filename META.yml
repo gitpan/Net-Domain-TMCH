@@ -22,6 +22,7 @@ requires:
   Crypt::OpenSSL::VerifyX509: 0.10
   Crypt::OpenSSL::X509: 1.803
   Data::Dumper: 0
+  DateTime: 0
   Digest::SHA2: v1.1.1
   File::Basename: 0
   File::Slurp: 0
@@ -33,4 +34,4 @@ requires:
   XML::Compile::WSS: 1.09
   XML::Compile::WSS::Signature: 2.01
   XML::LibXML: 0
-version: 0.12
+version: 0.13

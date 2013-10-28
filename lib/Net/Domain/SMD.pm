@@ -7,71 +7,100 @@ use strict;
 
 package Net::Domain::SMD;
 use vars '$VERSION';
-$VERSION = '0.12';
+$VERSION = '0.13';
 
-use base 'Exporter';
+use Log::Report   'net-domain-smd';
 
-our @EXPORT_OK   = qw/SMD10_NS MARK10_NS/;
-our %EXPORT_TAGS =
-  ( ns10 => [ qw/SMD10_NS MARK10_NS/ ]
-  );
-
-use Log::Report                  'net-domain-smd';
-use XML::Compile::Cache          ();
-use XML::Compile::WSS::Signature ();
-use XML::Compile::WSS::Util      qw(DSIG_NS);
-use Net::Domain::SMD::File       ();
-
-use constant
-  { SMD10_NS  => 'urn:ietf:params:xml:ns:signedMark-1.0'
-  , MARK10_NS => 'urn:ietf:params:xml:ns:mark-1.0'
-  };
-
-my %prefixes =
-  ( ds   => DSIG_NS   # do not take this prefix from these schemas
-  , smd  => SMD10_NS
-  , mark => MARK10_NS
-  );
+use MIME::Base64       qw/decode_base64/;
+use XML::LibXML        ();
+use POSIX              qw/mktime tzset/;
+use XML::Compile::Util qw/type_of_node/;
+use List::Util         qw/first/;
+use Scalar::Util       qw/blessed/;
+use DateTime           ();
 
 
 sub new($%) { my ($class, %args) = @_; (bless {}, $class)->init(\%args) }
 sub init($)
 {   my ($self, $args) = @_;
-
-    (my $xsddir = __FILE__) =~ s!\.pm!/xsd/!;
-    my @xsds    =
-      ( "$xsddir/mark-1.0.xsd"
-      , "$xsddir/mark-1.0-bugs.xsd"
-      , "$xsddir/signedMark-1.0.xsd"
-      , "$xsddir/signedMark-1.0-bugs.xsd"
-      );
-
-    my $schemas = $self->{NDS_schemas}
-      = XML::Compile::Cache->new(\@xsds, prefixes => \%prefixes);
-
-    # do not prefix 'mark', because the accesses it all the time.
-    $schemas->addKeyRewrite('PREFIXED(smd)');
-    my $sig = XML::Compile::WSS::Signature->new
-      ( schema     => $schemas
-      , prepare    => ($args->{prepare} || 'READER')
-      , sign_types => [ 'smd:signedMarkType', 'ds:KeyInfoType' ]
-      , sign_put   => 'smd:signedMarkType'
-      , sign_when  => 'smd:signedMarkType'
-      );
+    $self->{NDS_data}    = $args->{data}    or panic;
+    $self->{NDS_payload} = $args->{payload} or panic;
     $self;
 }
 
-#-------------------------
+
+sub fromNode($%)
+{   my ($class, $node, %args) = @_;
+    my $schemas = delete $args{schemas} or panic;
+
+    $node = $node->documentElement
+        if $node->isa('XML::LibXML::Document');
+
+    my $type = type_of_node $node;
+    my $data = $schemas->reader($type)->($node);
+
+    $class->new(payload => $node, data => $data, %args);
+}
+
+#----------------
+
+sub payload()   {shift->{NDS_payload}}
+sub data()      {shift->{NDS_data}}      # avoid, undocumented
+sub _mark()     {shift->data->{mark}}    # hidden
+
+#----------------
+
+sub courts()  { @{shift->_mark->{court} || []} }
 
 
-sub schemas()     {shift->{NDS_schemas}}
-
-#-------------------------
+sub trademarks()  { @{shift->_mark->{trademark} || []} }
 
 
-sub read($)
-{   my ($self, $fn) = @_;
-    Net::Domain::SMD::File->fromFile($fn, schemas => $self->schemas);
+sub treaties()  { @{shift->_mark->{treatyOrStatute} || []} }
+
+
+sub certificates(%)
+{   my ($self, %args) = @_;
+
+    my $tokens = $self->data->{ds_Signature}{ds_KeyInfo}{__TOKENS} || [];
+    my @certs  = map $_->certificate, @$tokens;
+
+    my $issuer = $args{issuer};
+    $issuer ? (grep $_->subject eq $issuer, @certs) : @certs;
+}
+
+
+sub issuer()
+{   my $i = shift->data->{smd_issuerInfo} or return;
+    # remove smd namespace prefixes
+    my %issuer;
+    while(my($k, $v) = each %$i)
+    {   $k =~ s/smd_//;
+        $issuer{$k} = $v;
+    }
+    \%issuer;
+}
+
+#----------------
+
+sub date2time($)
+{   my ($thing, $date) = @_;
+
+    return $date
+        if blessed $date && $date->isa('DateTime');
+
+    # For now, I only support Zulu time: 2013-07-12T12:53:48.408Z
+    $date =~ m/^ ([0-9]{4})\-([0-1]?[0-9])\-([0-3]?[0-9])
+               T ([0-2]?[0-9])\:([0-5]?[0-9])\:([0-6]?[0-9])(\.[0-9]+)?
+               ([+-][0-9]?[0-9]\:[0-9][0-9]|Z)? $/x
+        or return;
+
+    DateTime->new
+      ( year => $1, month => $2, day => $3
+      , hour => $4, minute => $5, second => $6, 
+      , nanosecond => int(1_000_000_000 * ($7 || 0))
+      , time_zone  => ($8 || 'UTC')
+      );
 }
 
 1;

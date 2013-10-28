@@ -2,7 +2,7 @@ use ExtUtils::MakeMaker;
 
 use 5.010;
 
-my $version = '0.12';
+my $version = '0.13';
 
 WriteMakefile
  ( NAME	 	=> 'Net::Domain::TMCH'
@@ -13,6 +13,7 @@ WriteMakefile
      , Crypt::OpenSSL::VerifyX509   => '0.10'
      , Crypt::OpenSSL::X509         => '1.803'
      , Data::Dumper                 => 0
+     , DateTime                     => 0
      , Digest::SHA2                 => '1.1.1'   # for SHA256 support
      , File::Basename               => 0
      , File::Slurp                  => 0

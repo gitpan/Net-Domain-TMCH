@@ -4,15 +4,25 @@
 
 Net::Domain::SMD::File - Info from one SMD file
 
+=head1 INHERITANCE
+
+ Net::Domain::SMD::File
+   is a Net::Domain::SMD
+
 =head1 SYNOPSIS
 
   # end-user route to collect the info
   my $tmch  = Net::Domain::TMCH->new(%options);
   my $smdf  = $tmch->smd($filename);
 
-  # use by TMCH internally
-  my $smd  = Net::Domain::SMD->new(%options);
+  # used by TMCH internally via ::SMD
+  my $smd  = Net::Domain::SMD::Schema->new(%options);
   my $smdf = $smd->read($fn);
+
+  # used by ::SMD internally as
+  my $smdf = Net::Domain::SMD->fromFile($fn, schemas => $smd->schemas);
+
+  # See Net::Domain::SMD for generic interface
 
 =head1 DESCRIPTION
 
@@ -20,10 +30,16 @@ Draft RFC L<http://tools.ietf.org/html/draft-lozano-tmch-func-spec-06>
 SMD information is packaged.  This object represents one file in wrapped
 format.
 
+See L<documentation in the base class|Net::Domain::SMD/"DESCRIPTION">.
+ 
 =head1 METHODS
 
+See L<documentation in the base class|Net::Domain::SMD/"METHODS">.
+ 
 =head2 Constructors
 
+See L<documentation in the base class|Net::Domain::SMD/"Constructors">.
+ 
 =over 4
 
 =item Net::Domain::SMD::File-E<gt>B<fromFile>(FILENAME, OPTIONS)
@@ -37,14 +53,24 @@ format.
 
 =back
 
+=item Net::Domain::SMD::File-E<gt>B<fromNode>(NODE, OPTIONS)
+
+See L<Net::Domain::SMD/"Constructors">
+
 =item Net::Domain::SMD::File-E<gt>B<new>(OPTIONS)
 
- -Option  --Default
-  filename  <required>
+ -Option  --Defined in      --Default
+  data      Net::Domain::SMD  <required>
+  filename                    <required>
+  payload   Net::Domain::SMD  <required>
 
 =over 2
 
+=item data => HASH
+
 =item filename => FILENAME
+
+=item payload => XML-NODE
 
 =back
 
@@ -52,6 +78,8 @@ format.
 
 =head2 Attributes
 
+See L<documentation in the base class|Net::Domain::SMD/"Attributes">.
+ 
 =over 4
 
 =item $obj-E<gt>B<filename>()
@@ -68,7 +96,49 @@ is not described in the spec.
 
 =item $obj-E<gt>B<payload>()
 
-Returns the XML::LibXML::Document contained in the file.
+See L<Net::Domain::SMD/"Attributes">
+
+=back
+
+=head2 XML content access
+
+See L<documentation in the base class|Net::Domain::SMD/"XML content access">.
+ 
+=over 4
+
+=item $obj-E<gt>B<certificates>(OPTIONS)
+
+See L<Net::Domain::SMD/"XML content access">
+
+=item $obj-E<gt>B<courts>()
+
+See L<Net::Domain::SMD/"XML content access">
+
+=item $obj-E<gt>B<issuer>()
+
+See L<Net::Domain::SMD/"XML content access">
+
+=item $obj-E<gt>B<trademarks>()
+
+See L<Net::Domain::SMD/"XML content access">
+
+=item $obj-E<gt>B<treaties>()
+
+See L<Net::Domain::SMD/"XML content access">
+
+=back
+
+=head2 Helpers
+
+See L<documentation in the base class|Net::Domain::SMD/"Helpers">.
+ 
+=over 4
+
+=item $obj-E<gt>B<date2time>(STRING)
+
+=item Net::Domain::SMD::File-E<gt>B<date2time>(STRING)
+
+See L<Net::Domain::SMD/"Helpers">
 
 =back
 
@@ -81,17 +151,25 @@ methods provide access to that header information.
 
 =item $obj-E<gt>B<from>()
 
-Returns the timestamp reflecting the 'notBefore' field.
+Returns the timestamp reflecting the 'notBefore' field, as string.
+
+=item $obj-E<gt>B<fromDateTime>()
+
+The value of L<from()|Net::Domain::SMD::File/"File header access"> converted into an DateTime object.
 
 =item $obj-E<gt>B<fromTime>()
 
-The value of L<from()|Net::Domain::SMD::File/"File header access"> converted into seconds from epoc.
+The value of L<from()|Net::Domain::SMD::File/"File header access"> converted into seconds from epoch.
 
 =item $obj-E<gt>B<smdID>()
 
 =item $obj-E<gt>B<until>()
 
-Returns the timestamp reflecting the 'notAfter' field.
+Returns the timestamp reflecting the 'notAfter' field, as string.
+
+=item $obj-E<gt>B<untilDateTime>()
+
+The value of L<until()|Net::Domain::SMD::File/"File header access"> converted into an DateTime object.
 
 =item $obj-E<gt>B<untilTime>()
 
@@ -99,74 +177,10 @@ The value of L<until()|Net::Domain::SMD::File/"File header access"> converted in
 
 =back
 
-=head2 XML content access
-
-The following methods try to be smart, to hide complexities in the XML
-structure, simplifying the main program.
-
-=over 4
-
-=item $obj-E<gt>B<certificates>(OPTIONS)
-
-Returns the certificates as contained in the SMD file.
-
- -Option--Default
-  issuer  <any issuer>
-
-=over 2
-
-=item issuer => NAME
-
-=back
-
-=item $obj-E<gt>B<courts>()
-
-Returns a list of HASHes, each representing one court.
-See F<examples/mark-templ.pl>
-
-example: 
-
-  foreach my $court ($smd->courts)
-  {   print $court->{courtName}, "\n";
-      print Dumper $court;
-  }
-
-=item $obj-E<gt>B<trademarks>()
-
-Returns a list of HASHes, each representing one trademark.
-See F<examples/mark-templ.pl>
-
-example: 
-
-  foreach my $trademark ($smd->trademarks)
-  {   print $trademark->{markName}, "\n";
-      my $holders = $trademark->{holder} || [];
-      foreach my $holder (@$holders)
-      {  print "Holder: $holder->{name}\n";
-      }
-  }
-
-=item $obj-E<gt>B<treaties>()
-
-Returns a list of HASHes, each representing one treaty or statute (one
-element of type "treatyOrStatute".  See F<examples/mark-templ.pl>
-
-=back
-
-=head2 Helpers
-
-=over 4
-
-=item $obj-E<gt>B<date2time>(STRING)
-
-Converts a time string into a time stamp (since epoch).
-
-=back
-
 =head1 SEE ALSO
 
-This module is part of Net-Domain-TMCH distribution version 0.12,
-built on October 14, 2013.  Development was supported by NIC.at, the Austrian
+This module is part of Net-Domain-TMCH distribution version 0.13,
+built on October 28, 2013.  Development was supported by NIC.at, the Austrian
 Domainname Registry.
 
  Website: F<http://perl.overmeer.net/net-domain-tmch/>

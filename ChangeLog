@@ -1,5 +1,17 @@
 ========== version history of Net::Domain::TMCH
 
+version 0.13: Mon Oct 28 10:53:32 CET 2013
+	Changes:
+	- moved ::SMD into ::SMD::Schema
+
+	Improvements:
+	- a bit more documentation in SYNOPSIS
+	- extracted generic base-class ::SMD from ::SMD::File
+	- accept EPP and strings as source for ::SMD
+	- internal ::SMD::File::_dateTime() becomes ::SMD::dateTime,
+	  and returns a DateTime object.
+	- new ::SMD::File::fromDateTime() and untilDateTime()
+
 version 0.12: Mon Oct 14 09:55:04 CEST 2013
 	Improvements:
 	- a bit more documentation.

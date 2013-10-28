@@ -2,30 +2,42 @@
 
 =head1 NAME
 
-Net::Domain::SMD - Mark and Signed-Mark Objects Mapping
+Net::Domain::SMD - Info from one SMD structured information
 
 =head1 INHERITANCE
 
- Net::Domain::SMD
-   is a Exporter
+ Net::Domain::SMD is extended by
+   Net::Domain::SMD::File
 
 =head1 SYNOPSIS
 
-  # This object is used by Net::Domain::TMCH, so usually not directly
-  # accessed by end-users.
+  # end-user route to collect the info
+  my $tmch  = Net::Domain::TMCH->new(%options);
+  my $smdf  = $tmch->smd($filename);
+  my $smdf  = $tmch->smd($node);   # XML::LibXML::Element
+  my $smdf  = $tmch->smd($string); # bytes
 
-  my $smd  = Net::Domain::SMD->new(%options);
-  my $info = $smd->read($fn);
+  # Data::Dumper is your friend
+  foreach my $court ($smd->courts)
+  {   print $court->{courtName}, "\n";
+      print Dumper $court;
+  }
+
+  foreach my $trademark ($smd->trademarks)
+  {   print $trademark->{markName}, "\n";
+      my $holders = $trademark->{holder} || [];
+      foreach my $holder (@$holders)
+      {  print "Holder: $holder->{name}\n";
+      }
+  }
+
+  foreach my $treaty ($smd->treaties) ...
 
 =head1 DESCRIPTION
 
-Draft RFC L<http://tools.ietf.org/html/draft-lozano-tmch-smd-02>
-specifies a way for TLD (domain registries) to exchange mark
-rights (brand registrations): "SMD"-files.
-
-This module unpacks these SMD-files, decoding the XML contained in them.
-Each SMD-file is represented by a separate L<Net::Domain::SMD::File|Net::Domain::SMD::File>
-object.
+Draft RFC L<http://tools.ietf.org/html/draft-lozano-tmch-func-spec-06>
+SMD information is packaged.  This object represents one file in wrapped
+format.
 
 =head1 METHODS
 
@@ -33,14 +45,31 @@ object.
 
 =over 4
 
-=item Net::Domain::SMD-E<gt>B<new>(OPTIONS)
+=item Net::Domain::SMD-E<gt>B<fromNode>(NODE, OPTIONS)
+
+Input is an XML::LibXML::Element, which contains a signedMark structure.
+The OPTIONS are passed on to L<new()|Net::Domain::SMD/"Constructors">.
 
  -Option --Default
-  prepare  'READER'
+  schemas  <required>
 
 =over 2
 
-=item prepare => 'NONE'|'READER'
+=item schemas => L<XML::Compile::Schema|XML::Compile::Schema>
+
+=back
+
+=item Net::Domain::SMD-E<gt>B<new>(OPTIONS)
+
+ -Option --Default
+  data     <required>
+  payload  <required>
+
+=over 2
+
+=item data => HASH
+
+=item payload => XML-NODE
 
 =back
 
@@ -50,25 +79,89 @@ object.
 
 =over 4
 
-=item $obj-E<gt>B<schemas>()
+=item $obj-E<gt>B<payload>()
+
+Returns the XML::LibXML::Element which contains the whole SMD
+structure.
 
 =back
 
-=head2 Actions
+=head2 XML content access
+
+The following methods try to be smart, to hide complexities in the XML
+structure, simplifying the main program.
 
 =over 4
 
-=item $obj-E<gt>B<read>(FILENAME)
+=item $obj-E<gt>B<certificates>(OPTIONS)
 
-Returns an L<Net::Domain::SMD::File|Net::Domain::SMD::File> object, or an exception which can
-be caught with Log::Report subroutine try or C<eval>.
+Returns the certificates as contained in the SMD file.
+
+ -Option--Default
+  issuer  <any issuer>
+
+=over 2
+
+=item issuer => NAME
+
+=back
+
+=item $obj-E<gt>B<courts>()
+
+Returns a list of HASHes, each representing one court.
+See F<examples/mark-templ.pl>
+
+example: 
+
+  foreach my $court ($smd->courts)
+  {   print $court->{courtName}, "\n";
+      print Dumper $court;
+  }
+
+=item $obj-E<gt>B<issuer>()
+
+Returns the issuer information, as a HASH.
+
+=item $obj-E<gt>B<trademarks>()
+
+Returns a list of HASHes, each representing one trademark.
+See F<examples/mark-templ.pl>
+
+example: 
+
+  foreach my $trademark ($smd->trademarks)
+  {   print $trademark->{markName}, "\n";
+      my $holders = $trademark->{holder} || [];
+      foreach my $holder (@$holders)
+      {  print "Holder: $holder->{name}\n";
+      }
+  }
+
+=item $obj-E<gt>B<treaties>()
+
+Returns a list of HASHes, each representing one treaty or statute (one
+element of type "treatyOrStatute".  See F<examples/mark-templ.pl>
+
+=back
+
+=head2 Helpers
+
+=over 4
+
+=item $obj-E<gt>B<date2time>(STRING)
+
+=item Net::Domain::SMD-E<gt>B<date2time>(STRING)
+
+Converts a time string into a DateTime object.  Accepted time-STRINGs
+are like time stamps in the SMD file headers, but also the ISO values
+inside an object.
 
 =back
 
 =head1 SEE ALSO
 
-This module is part of Net-Domain-TMCH distribution version 0.12,
-built on October 14, 2013.  Development was supported by NIC.at, the Austrian
+This module is part of Net-Domain-TMCH distribution version 0.13,
+built on October 28, 2013.  Development was supported by NIC.at, the Austrian
 Domainname Registry.
 
  Website: F<http://perl.overmeer.net/net-domain-tmch/>
