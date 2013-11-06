@@ -7,7 +7,7 @@ use strict;
 
 package Net::Domain::SMD::Schema;
 use vars '$VERSION';
-$VERSION = '0.14';
+$VERSION = '0.15';
 
 use base 'Exporter';
 
@@ -22,6 +22,7 @@ use XML::Compile::WSS::Signature ();
 use XML::Compile::WSS::Util      qw(DSIG_NS);
 use Net::Domain::SMD::File       ();
 use File::Basename               qw(dirname);
+use Scalar::Util                 qw(blessed);
 
 use constant
   { SMD10_NS  => 'urn:ietf:params:xml:ns:signedMark-1.0'
@@ -85,7 +86,7 @@ sub from($%)
         if $xml !~ m/\n/ && -f $xml;
 
     my $source;
-    unless($xml->isa('XML::LibXML::Node'))
+    unless(blessed $xml && $xml->isa('XML::LibXML::Node'))
     {   $xml      = XML::LibXML->load_xml(string => $xml);
         $source   = 'string';
     }

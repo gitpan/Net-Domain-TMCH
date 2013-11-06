@@ -2,7 +2,7 @@
 
 =head1 NAME
 
-Net::Domain::SMD - Info from one SMD structured information
+Net::Domain::SMD - info from one SMD structure
 
 =head1 INHERITANCE
 
@@ -104,6 +104,8 @@ Returns the certificates as contained in the SMD file.
 
 =item issuer => NAME
 
+Limit to the certificates of the issuer.
+
 =back
 
 =item $obj-E<gt>B<courts>()
@@ -180,8 +182,8 @@ inside an object.
 
 =head1 SEE ALSO
 
-This module is part of Net-Domain-TMCH distribution version 0.14,
-built on October 28, 2013.  Development was supported by NIC.at, the Austrian
+This module is part of Net-Domain-TMCH distribution version 0.15,
+built on November 07, 2013.  Development was supported by NIC.at, the Austrian
 Domainname Registry.
 
  Website: F<http://perl.overmeer.net/net-domain-tmch/>

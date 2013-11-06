@@ -2,7 +2,7 @@
 
 =head1 NAME
 
-Net::Domain::SMD::File - Info from one SMD file
+Net::Domain::SMD::File - SMD info contained in a file
 
 =head1 INHERITANCE
 
@@ -171,8 +171,8 @@ methods provide access to that header information.
 
 =head1 SEE ALSO
 
-This module is part of Net-Domain-TMCH distribution version 0.14,
-built on October 28, 2013.  Development was supported by NIC.at, the Austrian
+This module is part of Net-Domain-TMCH distribution version 0.15,
+built on November 07, 2013.  Development was supported by NIC.at, the Austrian
 Domainname Registry.
 
  Website: F<http://perl.overmeer.net/net-domain-tmch/>

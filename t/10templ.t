@@ -5,7 +5,7 @@ use strict;
 
 use lib 'lib', '../WSSSIG/lib', '../XMLWSS/lib';
 use Test::More tests => 7;
-use Log::Report mode => 2;
+use Log::Report;
 
 my $smd_example  = "examples/smd-templ.pl";
 my $mark_example = "examples/mark-templ.pl";

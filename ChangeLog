@@ -1,5 +1,19 @@
 ========== version history of Net::Domain::TMCH
 
+version 0.15: Thu Nov  7 00:12:27 CET 2013
+
+	Fixes:
+	- pass SMD as string broke at isa() [Mark Hofstetter]
+	- pick correct certificate from SMD
+
+	Improvements:
+	- moved to test-set 2 Oct 2013
+	- bin/tmch new option --tmvrl 
+	- withdrawn TMV certs in pilot have other URI
+	- include current test-set as tar in test/
+	- add test/README
+	- removed docs/*pdf from the distribution
+
 version 0.14: Mon Oct 28 11:10:30 CET 2013
 	Improvements:
 	- move from(), until(), fromTime(), and untilTime() from ::SMD::File

@@ -77,8 +77,8 @@ be caught with Log::Report subroutine try or C<eval>.
 
 =head1 SEE ALSO
 
-This module is part of Net-Domain-TMCH distribution version 0.14,
-built on October 28, 2013.  Development was supported by NIC.at, the Austrian
+This module is part of Net-Domain-TMCH distribution version 0.15,
+built on November 07, 2013.  Development was supported by NIC.at, the Austrian
 Domainname Registry.
 
  Website: F<http://perl.overmeer.net/net-domain-tmch/>

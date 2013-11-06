@@ -7,7 +7,7 @@ use strict;
 
 package Net::Domain::TMCH;
 use vars '$VERSION';
-$VERSION = '0.14';
+$VERSION = '0.15';
 
 use base 'Exporter';
 
@@ -25,7 +25,8 @@ use Scalar::Util           qw(blessed);
 use URI                    ();
 
 use constant
-  { CRL_SOURCE => 'http://crl.icann.org/tmch.crl'   # what? no https?
+  { TMV_CRL_LIVE  => 'http://crl.icann.org/tmch.crl'   # what? no https?
+  , TMV_CRL_PILOT => 'http://crl.icann.org/tmch_pilot.crl'
   };
 
 
@@ -39,8 +40,8 @@ sub init($)
          , auto_datetime => $args->{auto_datetime}
          );
 
-    my $stage    = $self->{NDT_pilot}
-      = $args->{is_pilot} ? 'tmch_pilot' : 'tmch';
+    my $pilot    = $self->{NDT_pilot} = $args->{is_pilot};
+    my $stage    = $pilot ? 'tmch_pilot' : 'tmch';
 
     my $tmch_pem = $args->{tmch_certificate}
      || catfile dirname(__FILE__), 'TMCH', 'icann', "$stage.pem";
@@ -48,7 +49,9 @@ sub init($)
     $self->{NDT_tmch_cert} = Crypt::OpenSSL::X509->new_from_file($tmch_pem);
     $self->{NDT_tmch_ca}   = Crypt::OpenSSL::VerifyX509->new($tmch_pem);
 
-    $self->{NDT_crl}   = $self->_crl($args->{cert_revocations} || CRL_SOURCE);
+    $self->{NDT_crl}   = $self->_crl($args->{cert_revocations}
+       || ($pilot ? TMV_CRL_PILOT : TMV_CRL_LIVE));
+
     $self->{NDT_smdrl} = [ $self->_smdrl($args->{smd_revocations}) ];
 
     $self;
@@ -122,7 +125,7 @@ sub smd($%)
 
     my ($tmv_cert) = $smd->certificates(issuer => $tmch_cert->subject);
     defined $tmv_cert
-        or error __x"smd in {source} does not contain an TMV certificate"
+        or error __x"smd in {source} does not contain a TMV certificate"
              , source => $source;
 
     $self->tmchCA->verify($tmv_cert)

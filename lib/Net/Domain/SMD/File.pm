@@ -7,7 +7,7 @@ use strict;
 
 package Net::Domain::SMD::File;
 use vars '$VERSION';
-$VERSION = '0.14';
+$VERSION = '0.15';
 
 use parent 'Net::Domain::SMD';
 

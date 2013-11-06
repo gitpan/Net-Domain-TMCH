@@ -18,8 +18,8 @@ Net::Domain::TMCH - TradeMark Clearing House
 =head1 DESCRIPTION
 
 Draft RFC L<http://tools.ietf.org/html/draft-lozano-tmch-func-07>
-specifies a way for TLD (domain registries) to exchange information
-about trademark rights, brand registrations.
+specifies a way for TLD (top-level domain registries) to exchange
+information about trademark rights, brand registrations.
 
 This module manages the verification process of "SMD"-files, each
 containing a crypto-signed XML structure of information related to
@@ -126,8 +126,8 @@ example:
 
 =head1 SEE ALSO
 
-This module is part of Net-Domain-TMCH distribution version 0.14,
-built on October 28, 2013.  Development was supported by NIC.at, the Austrian
+This module is part of Net-Domain-TMCH distribution version 0.15,
+built on November 07, 2013.  Development was supported by NIC.at, the Austrian
 Domainname Registry.
 
  Website: F<http://perl.overmeer.net/net-domain-tmch/>

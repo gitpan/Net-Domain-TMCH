@@ -7,7 +7,7 @@ use strict;
 
 package Net::Domain::SMD;
 use vars '$VERSION';
-$VERSION = '0.14';
+$VERSION = '0.15';
 
 use Log::Report   'net-domain-smd';
 
@@ -66,7 +66,7 @@ sub certificates(%)
     my @certs  = map $_->certificate, @$tokens;
 
     my $issuer = $args{issuer};
-    $issuer ? (grep $_->subject eq $issuer, @certs) : @certs;
+    $issuer ? (grep $_->issuer eq $issuer, @certs) : @certs;
 }
 
 
