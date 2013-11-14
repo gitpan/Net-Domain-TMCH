@@ -126,6 +126,10 @@ See L<Net::Domain::SMD/"XML content access">
 
 See L<Net::Domain::SMD/"XML content access">
 
+=item $obj-E<gt>B<smdID>()
+
+See L<Net::Domain::SMD/"XML content access">
+
 =item $obj-E<gt>B<trademarks>()
 
 See L<Net::Domain::SMD/"XML content access">
@@ -158,21 +162,10 @@ See L<Net::Domain::SMD/"Helpers">
 
 =back
 
-=head2 File header access
-
-The SMD-file contains a header, wrapping the XML content.  The next
-methods provide access to that header information.
-
-=over 4
-
-=item $obj-E<gt>B<smdID>()
-
-=back
-
 =head1 SEE ALSO
 
-This module is part of Net-Domain-TMCH distribution version 0.15,
-built on November 07, 2013.  Development was supported by NIC.at, the Austrian
+This module is part of Net-Domain-TMCH distribution version 0.16,
+built on November 14, 2013.  Development was supported by NIC.at, the Austrian
 Domainname Registry.
 
  Website: F<http://perl.overmeer.net/net-domain-tmch/>

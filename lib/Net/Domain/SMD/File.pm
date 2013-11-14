@@ -7,7 +7,7 @@ use strict;
 
 package Net::Domain::SMD::File;
 use vars '$VERSION';
-$VERSION = '0.15';
+$VERSION = '0.16';
 
 use parent 'Net::Domain::SMD';
 
@@ -82,9 +82,5 @@ sub fromFile($%)
 sub filename()  {shift->{NDSF_fn}}
 sub labels()    { @{shift->{NDSF_labels} || []} }
 sub marks()     { @{shift->{NDSF_marks}  || []} }
-
-#----------------
-
-sub smdID()     {shift->data->{smd_id}}
 
 1;

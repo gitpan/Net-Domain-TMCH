@@ -7,7 +7,7 @@ use strict;
 
 package Net::Domain::TMCH::CRL;
 use vars '$VERSION';
-$VERSION = '0.15';
+$VERSION = '0.16';
 
 use base 'Exporter';
 
@@ -42,6 +42,13 @@ sub fromFile($%)
 }
 
 
+sub fromString($%)
+{   my $class = shift;
+    my $crl = Convert::X509::CRL->new(shift);
+    $class->new(source => 'string', revoked => $crl->{crl}, @_);
+}
+
+
 my $ua;
 sub fromURI($%)
 {   my ($class, $uri) = (shift, shift);
@@ -53,7 +60,7 @@ sub fromURI($%)
     my $resp = $ua->get($uri);
     $resp->is_success
         or error __x"could not collect CRL from {source}: {err}"
-              , $resp->status_line;
+             , source => $uri, err => $resp->status_line;
 
     my $crl = Convert::X509::CRL->new($resp->decoded_content);
     $class->new(source => $uri, revoked => $crl->{crl}, @_);

@@ -34,4 +34,4 @@ requires:
   XML::Compile::WSS: 1.09
   XML::Compile::WSS::Signature: 2.01
   XML::LibXML: 0
-version: 0.15
+version: 0.16

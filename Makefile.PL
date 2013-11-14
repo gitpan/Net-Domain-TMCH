@@ -2,7 +2,7 @@ use ExtUtils::MakeMaker;
 
 use 5.010;
 
-my $version = '0.15';
+my $version = '0.16';
 
 WriteMakefile
  ( NAME	 	=> 'Net::Domain::TMCH'

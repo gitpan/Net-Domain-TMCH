@@ -1,5 +1,13 @@
 ========== version history of Net::Domain::TMCH
 
+version 0.16: Thu Nov 14 11:22:03 CET 2013
+	Fixes:
+	- move ::SMD::File::smdID() into ::SMD [Mark Hofstetter]
+	- ::TMCH::CRL from uri error message [cpantesters]
+
+	Improvements
+	- add ::TMCH::CRL::fromString()  [Mark Hofstetter]
+
 version 0.15: Thu Nov  7 00:12:27 CET 2013
 
 	Fixes:

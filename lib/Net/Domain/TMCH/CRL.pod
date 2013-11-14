@@ -48,6 +48,11 @@ specifies a way for TLD (domain registries) to exchange trademark rights
 Read a CRL from file, for instance a cached or test CRL.
 The OPTIONS are passed to L<new()|Net::Domain::TMCH::CRL/"Constructors">.
 
+=item $obj-E<gt>B<fromString>(STRING, OPTIONS)
+
+Read a CRL from STRING, for instance a cached or test CRL.
+The OPTIONS are passed to L<new()|Net::Domain::TMCH::CRL/"Constructors">.
+
 =item $obj-E<gt>B<fromURI>(URI, OPTIONS)
 
 Create a new CRL object from an URI, which is collected via LWP.  The
@@ -96,8 +101,8 @@ revoked.  It is sufficient to provide a SERIAL number of the certificate.
 
 =head1 SEE ALSO
 
-This module is part of Net-Domain-TMCH distribution version 0.15,
-built on November 07, 2013.  Development was supported by NIC.at, the Austrian
+This module is part of Net-Domain-TMCH distribution version 0.16,
+built on November 14, 2013.  Development was supported by NIC.at, the Austrian
 Domainname Registry.
 
  Website: F<http://perl.overmeer.net/net-domain-tmch/>

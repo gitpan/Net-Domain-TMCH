@@ -7,7 +7,7 @@ use strict;
 
 package Net::Domain::SMD::Schema;
 use vars '$VERSION';
-$VERSION = '0.15';
+$VERSION = '0.16';
 
 use base 'Exporter';
 
