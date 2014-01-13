@@ -4,8 +4,8 @@ Makefile.PL
 PODTAIL.txt
 README
 bin/tmch
-docs/draft-lozano-tmch-func-spec-07.txt
-docs/draft-lozano-tmch-smd-02.txt
+docs/draft-lozano-tmch-func-spec-08.txt
+docs/draft-lozano-tmch-smd-03.txt
 examples/mark-templ.pl
 examples/smd-templ.pl
 lib/Net/Domain/SMD.pm
@@ -42,5 +42,6 @@ t/smd-test-revocation-15jul13-en.csv
 t/tmch_pilot.crl
 test/README
 test/testset-20131002.tar
+test/testset-20131125.tar
 META.yml                                 Module YAML meta-data (added by MakeMaker)
 META.json                                Module JSON meta-data (added by MakeMaker)

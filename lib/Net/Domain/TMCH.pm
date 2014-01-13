@@ -1,4 +1,4 @@
-# Copyrights 2013 by [Mark Overmeer].
+# Copyrights 2013-2014 by [Mark Overmeer].
 #  For other contributors see ChangeLog.
 # See the manual pages for details on the licensing terms.
 # Pod stripped from pm file by OODoc 2.01.
@@ -7,7 +7,7 @@ use strict;
 
 package Net::Domain::TMCH;
 use vars '$VERSION';
-$VERSION = '0.16';
+$VERSION = '0.17';
 
 use base 'Exporter';
 
@@ -72,7 +72,7 @@ sub _crl($)
     return Net::Domain::TMCH::CRL->fromURI($r)
         if $r->isa('URI');
 
-    error __x"revocation_list for THMC is not a {pkg}, filename, or uri"
+    error __x"revocation list for THMC is not a {pkg}, filename, or uri"
       , pkg => 'Net::Domain::TMCH::CRL';
 }
 
@@ -97,7 +97,7 @@ sub _smdrl($)
     return Net::Domain::SMD::RL->fromURI($r)
         if $r->isa('URI');
     
-    error __x"revocation_list for SMD is not a {pkg} or filename"
+    error __x"revocation list for SMD is not a {pkg} or filename"
       , pkg => 'Net::Domain::SMD::RL';
 }
 

@@ -12,7 +12,7 @@ use Net::Domain::TMCH ();
 
 my $tmch = Net::Domain::TMCH->new
   ( is_pilot => 1
-  , cert_revocation_list => 't/tmch_pilot.crl'
+  , cert_revocations => 't/tmch_pilot.crl'
   );
  
 ok(defined $tmch, 'instantiate tmch object');

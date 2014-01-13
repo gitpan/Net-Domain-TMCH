@@ -3,12 +3,12 @@
 
 Internet Engineering Task Force                                G. Lozano
 Internet-Draft                                                     ICANN
-Intended status: Informational                              Aug 09, 2013
-Expires: February 10, 2014
+Intended status: Informational                              Oct 02, 2013
+Expires: April 5, 2014
 
 
                      TMCH functional specifications
-                     draft-lozano-tmch-func-spec-07
+                     draft-lozano-tmch-func-spec-08
 
 Abstract
 
@@ -33,7 +33,7 @@ Status of this Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 10, 2014.
+   This Internet-Draft will expire on April 5, 2014.
 
 Copyright Notice
 
@@ -52,9 +52,9 @@ Copyright Notice
 
 
 
-Lozano                  Expires February 10, 2014               [Page 1]
+Lozano                    Expires April 5, 2014                 [Page 1]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 Table of Contents
@@ -108,9 +108,9 @@ Table of Contents
 
 
 
-Lozano                  Expires February 10, 2014               [Page 2]
+Lozano                    Expires April 5, 2014                 [Page 2]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
        5.3.3.  Trademark Claims Services for Registries . . . . . . . 27
@@ -133,7 +133,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
    9.  Change History . . . . . . . . . . . . . . . . . . . . . . . . 58
      9.1.  Changes from draft-lozano-tmch-func-spec-06 to
            draft-lozano-tmch-func-spec-07 . . . . . . . . . . . . . . 58
-   10. IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 58
+     9.2.  Changes from draft-lozano-tmch-func-spec-07 to
+           draft-lozano-tmch-func-spec-08 . . . . . . . . . . . . . . 58
+   10. IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 59
    11. Security Considerations  . . . . . . . . . . . . . . . . . . . 59
    12. References . . . . . . . . . . . . . . . . . . . . . . . . . . 59
      12.1. Normative References . . . . . . . . . . . . . . . . . . . 59
@@ -162,11 +164,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-
-
-Lozano                  Expires February 10, 2014               [Page 3]
+Lozano                    Expires April 5, 2014                 [Page 3]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 1.  Introduction
@@ -220,9 +220,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014               [Page 4]
+Lozano                    Expires April 5, 2014                 [Page 4]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    explained:
@@ -276,9 +276,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014               [Page 5]
+Lozano                    Expires April 5, 2014                 [Page 5]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    o  FQDN: Fully Qualified Domain Name (e.g. myname.example.com)
@@ -332,9 +332,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014               [Page 6]
+Lozano                    Expires April 5, 2014                 [Page 6]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    o  SMDM, SMD Manager: A entity managing the SMDs, mainly maintaining
@@ -388,9 +388,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014               [Page 7]
+Lozano                    Expires April 5, 2014                 [Page 7]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    o  TMDB, Trademark Clearinghouse Database: Serves as a database of
@@ -444,9 +444,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014               [Page 8]
+Lozano                    Expires April 5, 2014                 [Page 8]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 4.  Architecture
@@ -500,9 +500,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014               [Page 9]
+Lozano                    Expires April 5, 2014                 [Page 9]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 4.2.  Trademark Claims Period
@@ -556,9 +556,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 10]
+Lozano                    Expires April 5, 2014                [Page 10]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 4.3.  Interfaces
@@ -612,9 +612,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 11]
+Lozano                    Expires April 5, 2014                [Page 11]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 4.3.6.  dr
@@ -668,9 +668,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 12]
+Lozano                    Expires April 5, 2014                [Page 12]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 4.3.11.  sy
@@ -724,9 +724,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 13]
+Lozano                    Expires April 5, 2014                [Page 13]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 5.  Process Descriptions
@@ -780,9 +780,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 14]
+Lozano                    Expires April 5, 2014                [Page 14]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    o  During the Sunrise Period to validate the TMV certificates and the
@@ -836,9 +836,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 15]
+Lozano                    Expires April 5, 2014                [Page 15]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 5.1.2.3.  TMCH Trust Anchor
@@ -892,9 +892,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 16]
+Lozano                    Expires April 5, 2014                [Page 16]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 5.2.  Sunrise Period
@@ -948,9 +948,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 17]
+Lozano                    Expires April 5, 2014                [Page 17]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 5.2.2.  DN Registration by Registries
@@ -1004,9 +1004,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 18]
+Lozano                    Expires April 5, 2014                [Page 18]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 5.2.3.  TMCH Sunrise Services for Registries
@@ -1060,9 +1060,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 19]
+Lozano                    Expires April 5, 2014                [Page 19]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 5.2.3.2.  Certificate Revocation List
@@ -1116,9 +1116,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 20]
+Lozano                    Expires April 5, 2014                [Page 20]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 5.2.3.3.  Notice of Registered Domain Names
@@ -1172,9 +1172,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 21]
+Lozano                    Expires April 5, 2014                [Page 21]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    NORDN
@@ -1228,9 +1228,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 22]
+Lozano                    Expires April 5, 2014                [Page 22]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 5.2.4.  DN registration by Registrars
@@ -1284,9 +1284,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 23]
+Lozano                    Expires April 5, 2014                [Page 23]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 5.3.  Trademark Claims Period
@@ -1340,9 +1340,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 24]
+Lozano                    Expires April 5, 2014                [Page 24]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 5.3.2.  DN registration by Registries
@@ -1396,9 +1396,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 25]
+Lozano                    Expires April 5, 2014                [Page 25]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
           TCNID provided by the registrar compute the TCN Checksum.
@@ -1452,9 +1452,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 26]
+Lozano                    Expires April 5, 2014                [Page 26]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 5.3.3.  Trademark Claims Services for Registries
@@ -1508,9 +1508,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 27]
+Lozano                    Expires April 5, 2014                [Page 27]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 5.3.4.  DN Registration by Registrars
@@ -1518,7 +1518,7 @@ Internet-Draft       TMCH functional specifications             Aug 2013
    For each DN matching a DNL of a PRM, Registrars MUST perform the
    following steps:
 
-   1.  Use the Lookup Key received from the Registry to obtain the TNC
+   1.  Use the Lookup Key received from the Registry to obtain the TCN
        from the TMDB using the dr interface (Section 4.3.6) Registrars
        MUST only query for the Lookup Key of a DN that is available for
        registration.
@@ -1564,9 +1564,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 28]
+Lozano                    Expires April 5, 2014                [Page 28]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    TCN are generated twice a day.  The expiration date (<tmNotice:
@@ -1620,9 +1620,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 29]
+Lozano                    Expires April 5, 2014                [Page 29]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 6.  Data Format Descriptions
@@ -1676,9 +1676,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 30]
+Lozano                    Expires April 5, 2014                [Page 30]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
             -  DD: zero-padded day that the TCN was generated.
@@ -1732,9 +1732,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 31]
+Lozano                    Expires April 5, 2014                [Page 31]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 6.2.  SMD Revocation List
@@ -1774,8 +1774,8 @@ Internet-Draft       TMCH functional specifications             Aug 2013
          +  <smd-id>, identifier of the SMD that was revoked.
 
          +  <revoked SMD datetime>, revocation datetime in UTC of the
-            SMD.  The possible two values of time for inserting a DNL to
-            the DNL List are 00:00:00 and 12:00:00 UTC.
+            SMD.  The possible two values of time for inserting an SMD
+            to the SMD Revocation List are 00:00:00 and 12:00:00 UTC.
 
    To provide integrity protection, the SMD Revocation List is PGP
    [RFC4880] signed by the TMDB with the private key of the TMDB (see
@@ -1788,9 +1788,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 32]
+Lozano                    Expires April 5, 2014                [Page 32]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    (Section 4.3.11) is:
@@ -1844,9 +1844,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 33]
+Lozano                    Expires April 5, 2014                [Page 33]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 6.3.  LORDN File
@@ -1900,9 +1900,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 34]
+Lozano                    Expires April 5, 2014                [Page 34]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    o  The interface provides a HTTP/400 if the request is incorrect or
@@ -1956,9 +1956,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 35]
+Lozano                    Expires April 5, 2014                [Page 35]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
             -  <roid>, DN Repository Object IDentifier (DNROID) in the
@@ -2012,9 +2012,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 36]
+Lozano                    Expires April 5, 2014                [Page 36]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
       *  second line: a header line as specified in [RFC4180]
@@ -2068,9 +2068,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 37]
+Lozano                    Expires April 5, 2014                [Page 37]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    Example for LORDN during Claims
@@ -2124,9 +2124,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 38]
+Lozano                    Expires April 5, 2014                [Page 38]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    o  The interface provides a HTTP/400 status code if the request is
@@ -2180,9 +2180,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 39]
+Lozano                    Expires April 5, 2014                [Page 39]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
          +  <Warning flag>, whether the LORDN Log has any warning result
@@ -2236,9 +2236,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 40]
+Lozano                    Expires April 5, 2014                [Page 40]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 6.3.1.1.  LORDN Log Result Codes
@@ -2292,9 +2292,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 41]
+Lozano                    Expires April 5, 2014                [Page 41]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    ----  -------------------------------------------------------------
@@ -2348,19 +2348,33 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 42]
+Lozano                    Expires April 5, 2014                [Page 42]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    3613  SMD was revoked when used
-         The SMD used for registration was revoked when used.
+         The SMD used for registration was revoked more than
+         24 hours ago of the <datetime of registration>.
          In case of an asynchronous registration,
          the <datetime of application creation> is used when
          validating the DN Line.
 
    3614  TCNID does not exist
          The TCNID has never existed in the central repository.
+
+   3615  Recent-dnl-insertion outside of the time window
+         The DN registration is reported as a recent-dnl-insertion,
+         but the (re) insertion into the DNL ocurred more than
+         24 hours ago.
+
+   3616  Registration Date of DN in claims before the end of Sunrise
+         The registration date of the DN is before the end of Sunrise
+         and the DN was reported in a claims LORDN file.
+
+   3617  Registrar has not been approved by the TMDB
+         Registrar ID in DN Line has not completed Claims integration
+         testing with the TMDB.
 
    4501  Syntax Error in DN Line
          Syntax Error in DN Line.
@@ -2377,20 +2391,6 @@ Internet-Draft       TMCH functional specifications             Aug 2013
          The <datetime of registration> in the DN Line is in the
          future.
 
-   4604  Sunrise DN / application reported for TLD in Claims
-         The <datetime of registration> was reported in Sunrise LORDN
-         when the TLD was in Claims.
-         In case of an asynchronous registration,
-         the <datetime of application creation> is used when
-         validating the DN Line.
-
-   4605  Claims DN / application reported for TLD in Sunrise
-         The <datetime of registration> was reported in Claims LORDN
-         when the TLD was in Sunrise.
-         In case of an asynchronous registration,
-         the <datetime of application creation> is used when
-         validating the DN Line.
-
    4606  TLD not in Sunrise or Claims
          The <datetime of registration> was reported when the TLD was
          not in Sunrise or Claims.
@@ -2404,9 +2404,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 43]
+Lozano                    Expires April 5, 2014                [Page 43]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    4608  Application Date is later than Registration Date
@@ -2418,6 +2418,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
    4610  TCN Acceptance Date is in the future
          The <datetime of acceptance of the TCN> is in the future.
+
+   4611  Label has never existed in the TMDB
+         The label in the registered DN has never existed in the TMDB.
 
 
                                  Figure 15
@@ -2457,12 +2460,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-
-
-
-Lozano                  Expires February 10, 2014              [Page 44]
+Lozano                    Expires April 5, 2014                [Page 44]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 6.4.  SMD File
@@ -2516,9 +2516,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 45]
+Lozano                    Expires April 5, 2014                [Page 45]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    Example for SMD File (shortened at [...]):
@@ -2572,9 +2572,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 46]
+Lozano                    Expires April 5, 2014                [Page 46]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 6.5.  Trademark Claims Notice
@@ -2628,9 +2628,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 47]
+Lozano                    Expires April 5, 2014                [Page 47]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
          extracted from the TCNID (provided by the Registrar) to compute
@@ -2684,9 +2684,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 48]
+Lozano                    Expires April 5, 2014                [Page 48]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
             -  An OPTIONAL <tmNotice:sp> element that contains the
@@ -2740,9 +2740,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 49]
+Lozano                    Expires April 5, 2014                [Page 49]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
             -  A <tmNotice:cc> element that contains the contact's
@@ -2796,9 +2796,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 50]
+Lozano                    Expires April 5, 2014                [Page 50]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
             -  A <tmNotice:refNum> element that contains the reference
@@ -2852,9 +2852,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 51]
+Lozano                    Expires April 5, 2014                [Page 51]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
    Example of <tmNotice:notice> object:
@@ -2908,9 +2908,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 52]
+Lozano                    Expires April 5, 2014                [Page 52]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
   <tmNotice:claim>
@@ -2964,9 +2964,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 53]
+Lozano                    Expires April 5, 2014                [Page 53]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
         <tmNotice:street>La calle</tmNotice:street>
@@ -3020,9 +3020,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 54]
+Lozano                    Expires April 5, 2014                [Page 54]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
 7.  Formal Syntax
@@ -3076,9 +3076,9 @@ BEGIN
 
 
 
-Lozano                  Expires February 10, 2014              [Page 55]
+Lozano                    Expires April 5, 2014                [Page 55]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
       Schema for representing a Trademark Notice.
@@ -3132,9 +3132,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 56]
+Lozano                    Expires April 5, 2014                [Page 56]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
   </complexType>
@@ -3188,9 +3188,9 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
 
 
-Lozano                  Expires February 10, 2014              [Page 57]
+Lozano                    Expires April 5, 2014                [Page 57]
 
-Internet-Draft       TMCH functional specifications             Aug 2013
+Internet-Draft       TMCH functional specifications             Oct 2013
 
 
   </complexType>
@@ -3229,6 +3229,28 @@ END
    2.  Added mechanism to retrieve the LORDN Transaction Identifier
        based on a previously sent <LORDN creation datetime> element.
 
+9.2.  Changes from draft-lozano-tmch-func-spec-07 to
+      draft-lozano-tmch-func-spec-08
+
+   1.  Updated result codes: 3613.
+
+   2.  Added result codes: 3615, 3616, 3617 and 4611.
+
+   3.  Removed result codes: 4605 and 4606 to support Limited
+       Registration Periods as defined in the latest RPM Requirements
+       document.
+
+
+
+
+
+Lozano                    Expires April 5, 2014                [Page 58]
+
+Internet-Draft       TMCH functional specifications             Oct 2013
+
+
+   4.  Minor editorial fixes.
+
 
 10.  IANA Considerations
 
@@ -3239,15 +3261,6 @@ END
    Registration request for the Trademark Claims Notice:
 
       URI: urn:ietf:params:xml:ns:tmNotice-1.0
-
-
-
-
-
-Lozano                  Expires February 10, 2014              [Page 58]
-
-Internet-Draft       TMCH functional specifications             Aug 2013
-
 
       Registrant Contact: See the "Author's Address" section of this
       document.
@@ -3266,7 +3279,8 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
    [I-D.lozano-tmch-smd]
               Lozano, G., "Mark and Signed Mark Objects Mapping",
-              draft-lozano-tmch-smd-02 (work in progress), March 2013.
+              draft-lozano-tmch-smd-03 (work in progress),
+              September 2013.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119, March 1997.
@@ -3283,6 +3297,14 @@ Internet-Draft       TMCH functional specifications             Aug 2013
 
    [ISO3166-2]
               ISO, "International Standard for country codes and codes
+
+
+
+Lozano                    Expires April 5, 2014                [Page 59]
+
+Internet-Draft       TMCH functional specifications             Oct 2013
+
+
               for their subdivisions", 2006.
 
    [RFC1034]  Mockapetris, P., "Domain names - concepts and facilities",
@@ -3297,13 +3319,6 @@ Internet-Draft       TMCH functional specifications             Aug 2013
    [RFC1918]  Rekhter, Y., Moskowitz, R., Karrenberg, D., Groot, G., and
               E. Lear, "Address Allocation for Private Internets",
               BCP 5, RFC 1918, February 1996.
-
-
-
-Lozano                  Expires February 10, 2014              [Page 59]
-
-Internet-Draft       TMCH functional specifications             Aug 2013
-
 
    [RFC1952]  Deutsch, P., Gailly, J-L., Adler, M., Deutsch, L., and G.
               Randers-Pehrson, "GZIP file format specification version
@@ -3338,6 +3353,14 @@ Internet-Draft       TMCH functional specifications             Aug 2013
               Infrastructure Certificate and Certificate Revocation List
               (CRL) Profile", RFC 5280, May 2008.
 
+
+
+
+Lozano                    Expires April 5, 2014                [Page 60]
+
+Internet-Draft       TMCH functional specifications             Oct 2013
+
+
    [RFC5730]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)",
               STD 69, RFC 5730, August 2009.
 
@@ -3352,14 +3375,6 @@ Internet-Draft       TMCH functional specifications             Aug 2013
    [WIPO-NICE-CLASSES]
               WIPO, "Nice List of Classes", <http://www.wipo.int/
               classifications/nivilo/nice/index.htm>.
-
-
-
-
-Lozano                  Expires February 10, 2014              [Page 60]
-
-Internet-Draft       TMCH functional specifications             Aug 2013
-
 
    [WIPO.ST3]
               WIPO, "Recommended standard on two-letter codes for the
@@ -3397,20 +3412,5 @@ Author's Address
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Lozano                  Expires February 10, 2014              [Page 61]
+Lozano                    Expires April 5, 2014                [Page 61]
 

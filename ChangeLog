@@ -1,5 +1,12 @@
 ========== version history of Net::Domain::TMCH
 
+version 0.17: Mon Jan 13 13:29:05 CET 2014
+	Fixes:
+	- test-scripts used external crl [cpantesters]
+
+	Improvements:
+	- add test examples of 2013/11/25 [Gilles Quenot]
+
 version 0.16: Thu Nov 14 11:22:03 CET 2013
 	Fixes:
 	- move ::SMD::File::smdID() into ::SMD [Mark Hofstetter]

@@ -14,6 +14,7 @@ use XML::LibXML       ();
 
 my $tmch = Net::Domain::TMCH->new
   ( is_pilot => 1
+  , cert_revocations => 't/tmch_pilot.crl'
   );
  
 ok(defined $tmch, 'instantiate tmch object');

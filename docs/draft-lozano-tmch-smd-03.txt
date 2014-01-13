@@ -3,12 +3,12 @@
 
 Internet Engineering Task Force                                G. Lozano
 Internet-Draft                                                     ICANN
-Intended status: Standards Track                          March 25, 2013
-Expires: September 26, 2013
+Intended status: Standards Track                      September 27, 2013
+Expires: March 31, 2014
 
 
                   Mark and Signed Mark Objects Mapping
-                        draft-lozano-tmch-smd-02
+                        draft-lozano-tmch-smd-03
 
 Abstract
 
@@ -31,7 +31,7 @@ Status of this Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on September 26, 2013.
+   This Internet-Draft will expire on March 31, 2014.
 
 Copyright Notice
 
@@ -52,9 +52,9 @@ Copyright Notice
 
 
 
-Lozano                 Expires September 26, 2013               [Page 1]
+Lozano                   Expires March 31, 2014                 [Page 1]
 
-Internet-Draft            Mark and Signed Mark                March 2013
+Internet-Draft            Mark and Signed Mark            September 2013
 
 
 Table of Contents
@@ -66,16 +66,16 @@ Table of Contents
      2.2.  Mark . . . . . . . . . . . . . . . . . . . . . . . . . . .  5
      2.3.  Signed Mark  . . . . . . . . . . . . . . . . . . . . . . .  9
      2.4.  Encoded Signed Mark  . . . . . . . . . . . . . . . . . . . 12
-     2.5.  Appendix A. base64 encoded signedMark  . . . . . . . . . . 12
+     2.5.  Appendix A. base64 encoded signedMark  . . . . . . . . . . 13
    3.  Formal Syntax  . . . . . . . . . . . . . . . . . . . . . . . . 15
      3.1.  Signed Mark Schema . . . . . . . . . . . . . . . . . . . . 15
-     3.2.  Mark Schema  . . . . . . . . . . . . . . . . . . . . . . . 17
+     3.2.  Mark Schema  . . . . . . . . . . . . . . . . . . . . . . . 18
    4.  Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . 23
-   5.  Change History . . . . . . . . . . . . . . . . . . . . . . . . 23
-   6.  IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 24
+   5.  Change History . . . . . . . . . . . . . . . . . . . . . . . . 24
+   6.  IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 25
    7.  Security Considerations  . . . . . . . . . . . . . . . . . . . 25
    8.  Normative References . . . . . . . . . . . . . . . . . . . . . 25
-   Author's Address . . . . . . . . . . . . . . . . . . . . . . . . . 25
+   Author's Address . . . . . . . . . . . . . . . . . . . . . . . . . 26
 
 
 
@@ -108,9 +108,9 @@ Table of Contents
 
 
 
-Lozano                 Expires September 26, 2013               [Page 2]
+Lozano                   Expires March 31, 2014                 [Page 2]
 
-Internet-Draft            Mark and Signed Mark                March 2013
+Internet-Draft            Mark and Signed Mark            September 2013
 
 
 1.  Introduction
@@ -164,9 +164,9 @@ Internet-Draft            Mark and Signed Mark                March 2013
 
 
 
-Lozano                 Expires September 26, 2013               [Page 3]
+Lozano                   Expires March 31, 2014                 [Page 3]
 
-Internet-Draft            Mark and Signed Mark                March 2013
+Internet-Draft            Mark and Signed Mark            September 2013
 
 
    o  The child elements of <mark:holder> include:
@@ -220,9 +220,9 @@ Internet-Draft            Mark and Signed Mark                March 2013
 
 
 
-Lozano                 Expires September 26, 2013               [Page 4]
+Lozano                   Expires March 31, 2014                 [Page 4]
 
-Internet-Draft            Mark and Signed Mark                March 2013
+Internet-Draft            Mark and Signed Mark            September 2013
 
 
          +  One, two or three OPTIONAL <mark:street> elements that
@@ -276,9 +276,9 @@ Internet-Draft            Mark and Signed Mark                March 2013
 
 
 
-Lozano                 Expires September 26, 2013               [Page 5]
+Lozano                   Expires March 31, 2014                 [Page 5]
 
-Internet-Draft            Mark and Signed Mark                March 2013
+Internet-Draft            Mark and Signed Mark            September 2013
 
 
       *  A <mark:markName> element that contains the mark text string.
@@ -332,9 +332,9 @@ Internet-Draft            Mark and Signed Mark                March 2013
 
 
 
-Lozano                 Expires September 26, 2013               [Page 6]
+Lozano                   Expires March 31, 2014                 [Page 6]
 
-Internet-Draft            Mark and Signed Mark                March 2013
+Internet-Draft            Mark and Signed Mark            September 2013
 
 
          repository of marks.  A <mark:id> value is a concatenation of
@@ -388,9 +388,9 @@ Internet-Draft            Mark and Signed Mark                March 2013
 
 
 
-Lozano                 Expires September 26, 2013               [Page 7]
+Lozano                   Expires March 31, 2014                 [Page 7]
 
-Internet-Draft            Mark and Signed Mark                March 2013
+Internet-Draft            Mark and Signed Mark            September 2013
 
 
       *  A <mark:title> element that contains the title of the treaty or
@@ -444,9 +444,9 @@ Internet-Draft            Mark and Signed Mark                March 2013
 
 
 
-Lozano                 Expires September 26, 2013               [Page 8]
+Lozano                   Expires March 31, 2014                 [Page 8]
 
-Internet-Draft            Mark and Signed Mark                March 2013
+Internet-Draft            Mark and Signed Mark            September 2013
 
 
          regarding the regions of a country.
@@ -500,9 +500,9 @@ Internet-Draft            Mark and Signed Mark                March 2013
 
 
 
-Lozano                 Expires September 26, 2013               [Page 9]
+Lozano                   Expires March 31, 2014                 [Page 9]
 
-Internet-Draft            Mark and Signed Mark                March 2013
+Internet-Draft            Mark and Signed Mark            September 2013
 
 
    o  A <mark:mark> element that contains the mark information as
@@ -516,134 +516,144 @@ Internet-Draft            Mark and Signed Mark                March 2013
    Signature [2] to sign all of the elements of <smd:signedMark>
    element.
 
-  <?xml version="1.0" encoding="UTF-8"?>
-  <smd:signedMark xmlns:smd="urn:ietf:params:xml:ns:signedMark-1.0"
-  id="signedMark">
-   <smd:id>1-2</smd:id>
-   <smd:issuerInfo issuerID="2">
-    <smd:org>Example Inc.</smd:org>
-    <smd:email>support@example.tld</smd:email>
-    <smd:url>http://www.example.tld</smd:url>
-    <smd:voice x="1234">+1.7035555555</smd:voice>
+ <?xml version="1.0" encoding="UTF-8"?>
+ <smd:signedMark xmlns:smd="urn:ietf:params:xml:ns:signedMark-1.0"
+ id="smd1">
+   <smd:id>0000001751376056503931-65535</smd:id>
+   <smd:issuerInfo issuerID="65535">
+     <smd:org>ICANN TMCH TESTING TMV</smd:org>
+     <smd:email>notavailable@example.com</smd:email>
+     <smd:url>http://www.example.com</smd:url>
+     <smd:voice>+32.000000</smd:voice>
    </smd:issuerInfo>
-   <smd:notBefore>2009-08-16T09:00:00.0Z</smd:notBefore>
-   <smd:notAfter>2010-08-16T09:00:00.0Z</smd:notAfter>
+   <smd:notBefore>2013-08-09T13:55:03.931Z</smd:notBefore>
+   <smd:notAfter>2017-07-23T22:00:00.000Z</smd:notAfter>
    <mark:mark xmlns:mark="urn:ietf:params:xml:ns:mark-1.0">
-    <mark:trademark>
-     <mark:id>1234-2</mark:id>
-     <mark:markName>Example One</mark:markName>
-     <mark:holder entitlement="owner">
-      <mark:org>Example Inc.</mark:org>
-      <mark:addr>
-       <mark:street>123 Example Dr.</mark:street>
-       <mark:street>Suite 100</mark:street>
-       <mark:city>Reston</mark:city>
-       <mark:sp>VA</mark:sp>
-       <mark:pc>20190</mark:pc>
-       <mark:cc>US</mark:cc>
-      </mark:addr>
-     </mark:holder>
-     <mark:jurisdiction>US</mark:jurisdiction>
-     <mark:class>35</mark:class>
-     <mark:class>36</mark:class>
-     <mark:label>example-one</mark:label>
-     <mark:label>exampleone</mark:label>
-     <mark:goodsAndServices>Dirigendas et eiusmodi
-      featuring infringo in airfare et cartam servicia.
-     </mark:goodsAndServices>
-     <mark:regNum>234235</mark:regNum>
-     <mark:regDate>2009-08-16T09:00:00.0Z</mark:regDate>
+     <mark:trademark>
+       <mark:id>00052013734689731373468973-65535</mark:id>
+       <mark:markName>Test &amp; Validate</mark:markName>
+       <mark:holder entitlement="owner">
+         <mark:org>Ag corporation</mark:org>
+         <mark:addr>
+           <mark:street>1305 Bright Avenue</mark:street>
+           <mark:city>Arcadia</mark:city>
+           <mark:sp>CA</mark:sp>
+           <mark:pc>90028</mark:pc>
+           <mark:cc>US</mark:cc>
+         </mark:addr>
+       </mark:holder>
+       <mark:contact type="agent">
+         <mark:name>Tony Holland</mark:name>
+         <mark:org>Ag corporation</mark:org>
+         <mark:addr>
+           <mark:street>1305 Bright Avenue</mark:street>
+           <mark:city>Arcadia</mark:city>
+           <mark:sp>CA</mark:sp>
+           <mark:pc>90028</mark:pc>
+           <mark:cc>US</mark:cc>
+         </mark:addr>
+         <mark:voice>+1.2025562302</mark:voice>
 
 
 
-Lozano                 Expires September 26, 2013              [Page 10]
+Lozano                   Expires March 31, 2014                [Page 10]
 
-Internet-Draft            Mark and Signed Mark                March 2013
+Internet-Draft            Mark and Signed Mark            September 2013
 
 
-     <mark:exDate>2015-08-16T09:00:00.0Z</mark:exDate>
-    </mark:trademark>
+         <mark:fax>+1.2025562301</mark:fax>
+         <mark:email>info@agcorporation.com</mark:email>
+       </mark:contact>
+       <mark:jurisdiction>US</mark:jurisdiction>
+       <mark:class>15</mark:class>
+       <mark:label>testandvalidate</mark:label>
+       <mark:label>test---validate</mark:label>
+       <mark:label>testand-validate</mark:label>
+       <mark:label>test-et-validate</mark:label>
+       <mark:label>test-validate</mark:label>
+       <mark:label>test--validate</mark:label>
+       <mark:label>test-etvalidate</mark:label>
+       <mark:label>testetvalidate</mark:label>
+       <mark:label>testvalidate</mark:label>
+       <mark:label>testet-validate</mark:label>
+       <mark:goodsAndServices>guitar</mark:goodsAndServices>
+       <mark:regNum>1234</mark:regNum>
+       <mark:regDate>2012-12-31T23:00:00.000Z</mark:regDate>
+     </mark:trademark>
    </mark:mark>
-   <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-    <SignedInfo>
-     <CanonicalizationMethod
-  Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-     <SignatureMethod
-  Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
-     <Reference URI="#signedMark">
-      <Transforms>
-       <Transform
-  Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-      </Transforms>
-      <DigestMethod
-  Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
-      <DigestValue>
-       miF4M2aTd1Y3tKOzJtiyl2VpzAnVPnV1Hq7Zax+yzrA=
-      </DigestValue>
-     </Reference>
-    </SignedInfo>
-    <SignatureValue>
-     MELpHTWEVfG1JcsG1/a//o54OnlJ5A864+X5JwfqgGBBeZSzGHNzwzTKFzIyyyfn
-     lGxVwNMoBV5aSvkF7oEKMNVzfcl/P0czNQZ/LJ83p3Ol27/iUNsqgCaGf9Zupw+M
-     XT4Q2lOrIw+qSx5g7q9T83siMLvkD5uEYlU5dPqgsObLTW8/doTQrA14RcxgY4kG
-     a4+t5B1cT+5VaghTOPb8uUSEDKjnOsGdy8p24wgyK9n8h0CTSS2ZQ6Zq/RmQeT7D
-     sbceUHheQ+mkQWIljpMQqsiBjw5XXh4jkEgfAzrb6gkYEF+X8ReuPZuOYC4QjIET
-     yx8ifN4KE3GIbMXeF4LDsA==
-    </SignatureValue>
-    <KeyInfo>
-     <KeyValue>
-      <RSAKeyValue>
-       <Modulus>
-        o/cwvXhbVYl0RDWWvoyeZpETVZVVcMCovUVNg/swWinuMgEWgVQFrz0xA04pEhXC
-        FVv4evbUpekJ5buqU1gmQyOsCKQlhOHTdPjvkC5upDqa51Flk0TMaMkIQjs7aUKC
-        mA4RG4tTTGK/EjR1ix8/D0gHYVRldy1YPrMP+ou75bOVnIos+HifrAtrIv4qEqwL
-        L4FTZAUpaCa2BmgXfy2CSRQbxD5Or1gcSa3vurh5sPMCNxqaXmIXmQipS+DuEBqM
-        M8tldaN7RYojUEKrGVsNk5i9y2/7sjn1zyyUPf7vL4GgDYqhJYWV61DnXgx/Jd6C
-        WxvsnDF6scscQzUTEl+hyw==
-       </Modulus>
-       <Exponent>
-        AQAB
-       </Exponent>
-      </RSAKeyValue>
-     </KeyValue>
-     <X509Data>
-      <X509Certificate>
-       MIIESTCCAzGgAwIBAgIBAjANBgkqhkiG9w0BAQsFADBiMQswCQYDVQQGEwJVUzEL
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+   <SignedInfo>
+    <CanonicalizationMethod
+ Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+    <SignatureMethod
+ Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+    <Reference URI="#smd1">
+     <Transforms>
+      <Transform
+ Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+     </Transforms>
+     <DigestMethod
+ Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+ <DigestValue>wgyW3nZPoEfpptlhRILKnOQnbdtU6ArM7ShrAfHgDFg=</DigestValue>
+    </Reference>
+   </SignedInfo>
+   <SignatureValue>
+ jMu4PfyQGiJBF0GWSEPFCJjmywCEqR2h4LD+ge6XQ+JnmKFFCuCZS/3SLKAx0L1w
+ QDFO2e0Y69k2G7/LGE37X3vOflobFM1oGwja8+GMVraoto5xAd4/AF7eHukgAymD
+ o9toxoa2h0yV4A4PmXzsU6S86XtCcUE+S/WM72nyn47zoUCzzPKHZBRyeWehVFQ+
+ jYRMIAMzM57HHQA+6eaXefRvtPETgUO4aVIVSugc4OUAZZwbYcZrC6wOaQqqqAZi
+ 30aPOBYbAvHMSmWSS+hFkbshomJfHxb97TD2grlYNrQIzqXk7WbHWy2SYdA+sI/Z
+ ipJsXNa6osTUw1CzA7jfwA==
+   </SignatureValue>
+   <KeyInfo>
+    <X509Data>
+    <X509Certificate>
+ MIIESTCCAzGgAwIBAgIBAjANBgkqhkiG9w0BAQsFADBiMQswCQYDVQQGEwJVUzEL
 
 
 
-Lozano                 Expires September 26, 2013              [Page 11]
+Lozano                   Expires March 31, 2014                [Page 11]
 
-Internet-Draft            Mark and Signed Mark                March 2013
+Internet-Draft            Mark and Signed Mark            September 2013
 
 
-       MAkGA1UECBMCQ0ExFDASBgNVBAcTC0xvcyBBbmdlbGVzMRMwEQYDVQQKEwpJQ0FO
-       TiBUTUNIMRswGQYDVQQDExJJQ0FOTiBUTUNIIFRFU1QgQ0EwHhcNMTMwMjA4MDAw
-       MDAwWhcNMTgwMjA3MjM1OTU5WjBsMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0Ex
-       FDASBgNVBAcTC0xvcyBBbmdlbGVzMRcwFQYDVQQKEw5WYWxpZGF0b3IgVE1DSDEh
-       MB8GA1UEAxMYVmFsaWRhdG9yIFRNQ0ggVEVTVCBDRVJUMIIBIjANBgkqhkiG9w0B
-       AQEFAAOCAQ8AMIIBCgKCAQEAo/cwvXhbVYl0RDWWvoyeZpETVZVVcMCovUVNg/sw
-       WinuMgEWgVQFrz0xA04pEhXCFVv4evbUpekJ5buqU1gmQyOsCKQlhOHTdPjvkC5u
-       pDqa51Flk0TMaMkIQjs7aUKCmA4RG4tTTGK/EjR1ix8/D0gHYVRldy1YPrMP+ou7
-       5bOVnIos+HifrAtrIv4qEqwLL4FTZAUpaCa2BmgXfy2CSRQbxD5Or1gcSa3vurh5
-       sPMCNxqaXmIXmQipS+DuEBqMM8tldaN7RYojUEKrGVsNk5i9y2/7sjn1zyyUPf7v
-       L4GgDYqhJYWV61DnXgx/Jd6CWxvsnDF6scscQzUTEl+hywIDAQABo4H/MIH8MAwG
-       A1UdEwEB/wQCMAAwHQYDVR0OBBYEFPZEcIQcD/Bj2IFz/LERuo2ADJviMIGMBgNV
-       HSMEgYQwgYGAFO0/7kEh3FuEKS+Q/kYHaD/W6wihoWakZDBiMQswCQYDVQQGEwJV
-       UzELMAkGA1UECBMCQ0ExFDASBgNVBAcTC0xvcyBBbmdlbGVzMRMwEQYDVQQKEwpJ
-       Q0FOTiBUTUNIMRswGQYDVQQDExJJQ0FOTiBUTUNIIFRFU1QgQ0GCAQEwDgYDVR0P
-       AQH/BAQDAgeAMC4GA1UdHwQnMCUwI6AhoB+GHWh0dHA6Ly9jcmwuaWNhbm4ub3Jn
-       L3RtY2guY3JsMA0GCSqGSIb3DQEBCwUAA4IBAQB2qSy7ui+43cebKUKwWPrzz9y/
-       IkrMeJGKjo40n+9uekaw3DJ5EqiOf/qZ4pjBD++oR6BJCb6NQuQKwnoAz5lE4Ssu
-       y5+i93oT3HfyVc4gNMIoHm1PS19l7DBKrbwbzAea/0jKWVzrvmV7TBfjxD3AQo1R
-       bU5dBr6IjbdLFlnO5x0G0mrG7x5OUPuurihyiURpFDpwH8KAH1wMcCpXGXFRtGKk
-       wydgyVYAty7otkl/z3bZkCVT34gPvF70sR6+QxUy8u0LzF5A/beYaZpxSYG31amL
-       AdXitTWFipaIGea9lEGFM0L9+Bg7XzNn4nVLXokyEB3bgS4scG6QznX23FGk
-      </X509Certificate>
-     </X509Data>
-    </KeyInfo>
-   </Signature>
-  </smd:signedMark>
+ MAkGA1UECBMCQ0ExFDASBgNVBAcTC0xvcyBBbmdlbGVzMRMwEQYDVQQKEwpJQ0FO
+ TiBUTUNIMRswGQYDVQQDExJJQ0FOTiBUTUNIIFRFU1QgQ0EwHhcNMTMwMjA4MDAw
+ MDAwWhcNMTgwMjA3MjM1OTU5WjBsMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0Ex
+ FDASBgNVBAcTC0xvcyBBbmdlbGVzMRcwFQYDVQQKEw5WYWxpZGF0b3IgVE1DSDEh
+ MB8GA1UEAxMYVmFsaWRhdG9yIFRNQ0ggVEVTVCBDRVJUMIIBIjANBgkqhkiG9w0B
+ AQEFAAOCAQ8AMIIBCgKCAQEAo/cwvXhbVYl0RDWWvoyeZpETVZVVcMCovUVNg/sw
+ WinuMgEWgVQFrz0xA04pEhXCFVv4evbUpekJ5buqU1gmQyOsCKQlhOHTdPjvkC5u
+ pDqa51Flk0TMaMkIQjs7aUKCmA4RG4tTTGK/EjR1ix8/D0gHYVRldy1YPrMP+ou7
+ 5bOVnIos+HifrAtrIv4qEqwLL4FTZAUpaCa2BmgXfy2CSRQbxD5Or1gcSa3vurh5
+ sPMCNxqaXmIXmQipS+DuEBqMM8tldaN7RYojUEKrGVsNk5i9y2/7sjn1zyyUPf7v
+ L4GgDYqhJYWV61DnXgx/Jd6CWxvsnDF6scscQzUTEl+hywIDAQABo4H/MIH8MAwG
+ A1UdEwEB/wQCMAAwHQYDVR0OBBYEFPZEcIQcD/Bj2IFz/LERuo2ADJviMIGMBgNV
+ HSMEgYQwgYGAFO0/7kEh3FuEKS+Q/kYHaD/W6wihoWakZDBiMQswCQYDVQQGEwJV
+ UzELMAkGA1UECBMCQ0ExFDASBgNVBAcTC0xvcyBBbmdlbGVzMRMwEQYDVQQKEwpJ
+ Q0FOTiBUTUNIMRswGQYDVQQDExJJQ0FOTiBUTUNIIFRFU1QgQ0GCAQEwDgYDVR0P
+ AQH/BAQDAgeAMC4GA1UdHwQnMCUwI6AhoB+GHWh0dHA6Ly9jcmwuaWNhbm4ub3Jn
+ L3RtY2guY3JsMA0GCSqGSIb3DQEBCwUAA4IBAQB2qSy7ui+43cebKUKwWPrzz9y/
+ IkrMeJGKjo40n+9uekaw3DJ5EqiOf/qZ4pjBD++oR6BJCb6NQuQKwnoAz5lE4Ssu
+ y5+i93oT3HfyVc4gNMIoHm1PS19l7DBKrbwbzAea/0jKWVzrvmV7TBfjxD3AQo1R
+ bU5dBr6IjbdLFlnO5x0G0mrG7x5OUPuurihyiURpFDpwH8KAH1wMcCpXGXFRtGKk
+ wydgyVYAty7otkl/z3bZkCVT34gPvF70sR6+QxUy8u0LzF5A/beYaZpxSYG31amL
+ AdXitTWFipaIGea9lEGFM0L9+Bg7XzNn4nVLXokyEB3bgS4scG6QznX23FGk
+   </X509Certificate>
+   </X509Data>
+   </KeyInfo>
+  </Signature>
+ </smd:signedMark>
+
+   NOTE: The example shown above includes white-spaces for indentation
+   purposes.  It is RECOMMENDED that SMDs do not include white-spaces
+   between the XML elements, in order to mitigate risks of invalidating
+   the digital signature when transferring of SMDs between applications
+   takes place.
+
+   NOTE: Exclusive XML canonicalization SHOULD be used when generating
+   the SMD.  SHA256/RSA-SHA256 SHOULD be used for digesting and signing.
+   The size of the RSA key SHOULD be at least 2048 bits.
 
 2.4.  Encoded Signed Mark
 
@@ -655,134 +665,147 @@ Internet-Draft            Mark and Signed Mark                March 2013
    full example of a <smd:encodedSignedMark> element is presented in
    Appendix A.
 
+
+
+
+Lozano                   Expires March 31, 2014                [Page 12]
+
+Internet-Draft            Mark and Signed Mark            September 2013
+
+
 2.5.  Appendix A. base64 encoded signedMark
 
    The following is an example of a <smd:encodedSignedMark> element that
    uses the default "base64" for encoding a <smd:signedMark> element.
 
-   <smd:encodedSignedMark
-      xmlns:smd="urn:ietf:params:xml:ns:signedMark-1.0">
-   PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHNtZDpzaWdu
-   ZWRNYXJrIHhtbG5zOnNtZD0idXJuOmlldGY6cGFyYW1zOnhtbDpuczpzaWduZWRN
-   YXJrLTEuMCIgaWQ9InNpZ25lZE1hcmsiPgogIDxzbWQ6aWQ+MS0yPC9zbWQ6aWQ+
+ <smd:encodedSignedMark
+    xmlns:smd="urn:ietf:params:xml:ns:signedMark-1.0">
+ PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHNtZDpzaWduZWRNYXJ
+ rIHhtbG5zOnNtZD0idXJuOmlldGY6cGFyYW1zOnhtbDpuczpzaWduZWRNYXJrLTEuMCIgaW
+ Q9Il84Yzk0ZjRmMS1jZTlmLTRjOTAtOTUzMS01MzE1ZDIzY2EzYmQiPgogIDxzbWQ6aWQ+M
+ DAwMDAwMTc1MTM3NjA1NjUwMzkzMS02NTUzNTwvc21kOmlkPgogIDxzbWQ6aXNzdWVySW5m
+ byBpc3N1ZXJJRD0iNjU1MzUiPgogICAgPHNtZDpvcmc+SUNBTk4gVE1DSCBURVNUSU5HIFR
+ NVjwvc21kOm9yZz4KICAgIDxzbWQ6ZW1haWw+bm90YXZhaWxhYmxlQGV4YW1wbGUuY29tPC
+ 9zbWQ6ZW1haWw+CiAgICA8c21kOnVybD5odHRwOi8vd3d3LmV4YW1wbGUuY29tPC9zbWQ6d
+ XJsPgogICAgPHNtZDp2b2ljZT4rMzIuMDAwMDAwPC9zbWQ6dm9pY2U+CiAgPC9zbWQ6aXNz
+ dWVySW5mbz4KICA8c21kOm5vdEJlZm9yZT4yMDEzLTA4LTA5VDEzOjU1OjAzLjkzMVo8L3N
+ tZDpub3RCZWZvcmU+CiAgPHNtZDpub3RBZnRlcj4yMDE3LTA3LTIzVDIyOjAwOjAwLjAwMF
+ o8L3NtZDpub3RBZnRlcj4KICA8bWFyazptYXJrIHhtbG5zOm1hcms9InVybjppZXRmOnBhc
+ mFtczp4bWw6bnM6bWFyay0xLjAiPgogICAgPG1hcms6dHJhZGVtYXJrPgogICAgICA8bWFy
+ azppZD4wMDA1MjAxMzczNDY4OTczMTM3MzQ2ODk3My02NTUzNTwvbWFyazppZD4KICAgICA
+ gPG1hcms6bWFya05hbWU+VGVzdCAmYW1wOyBWYWxpZGF0ZTwvbWFyazptYXJrTmFtZT4KIC
+ AgICAgPG1hcms6aG9sZGVyIGVudGl0bGVtZW50PSJvd25lciI+CiAgICAgICAgPG1hcms6b
+ 3JnPkFnIGNvcnBvcmF0aW9uPC9tYXJrOm9yZz4KICAgICAgICA8bWFyazphZGRyPgogICAg
+ ICAgICAgPG1hcms6c3RyZWV0PjEzMDUgQnJpZ2h0IEF2ZW51ZTwvbWFyazpzdHJlZXQ+CiA
+ gICAgICAgICA8bWFyazpjaXR5PkFyY2FkaWE8L21hcms6Y2l0eT4KICAgICAgICAgIDxtYX
+ JrOnNwPkNBPC9tYXJrOnNwPgogICAgICAgICAgPG1hcms6cGM+OTAwMjg8L21hcms6cGM+C
+ iAgICAgICAgICA8bWFyazpjYz5VUzwvbWFyazpjYz4KICAgICAgICA8L21hcms6YWRkcj4K
+ ICAgICAgPC9tYXJrOmhvbGRlcj4KICAgICAgPG1hcms6Y29udGFjdCB0eXBlPSJhZ2VudCI
+ +CiAgICAgICAgPG1hcms6bmFtZT5Ub255IEhvbGxhbmQ8L21hcms6bmFtZT4KICAgICAgIC
+ A8bWFyazpvcmc+QWcgY29ycG9yYXRpb248L21hcms6b3JnPgogICAgICAgIDxtYXJrOmFkZ
+ HI+CiAgICAgICAgICA8bWFyazpzdHJlZXQ+MTMwNSBCcmlnaHQgQXZlbnVlPC9tYXJrOnN0
+ cmVldD4KICAgICAgICAgIDxtYXJrOmNpdHk+QXJjYWRpYTwvbWFyazpjaXR5PgogICAgICA
+ gICAgPG1hcms6c3A+Q0E8L21hcms6c3A+CiAgICAgICAgICA8bWFyazpwYz45MDAyODwvbW
+ FyazpwYz4KICAgICAgICAgIDxtYXJrOmNjPlVTPC9tYXJrOmNjPgogICAgICAgIDwvbWFya
+ zphZGRyPgogICAgICAgIDxtYXJrOnZvaWNlPisxLjIwMjU1NjIzMDI8L21hcms6dm9pY2U+
+ CiAgICAgICAgPG1hcms6ZmF4PisxLjIwMjU1NjIzMDE8L21hcms6ZmF4PgogICAgICAgIDx
+ tYXJrOmVtYWlsPmluZm9AYWdjb3Jwb3JhdGlvbi5jb208L21hcms6ZW1haWw+CiAgICAgID
+ wvbWFyazpjb250YWN0PgogICAgICA8bWFyazpqdXJpc2RpY3Rpb24+VVM8L21hcms6anVya
+ XNkaWN0aW9uPgogICAgICA8bWFyazpjbGFzcz4xNTwvbWFyazpjbGFzcz4KICAgICAgPG1h
+ cms6bGFiZWw+dGVzdGFuZHZhbGlkYXRlPC9tYXJrOmxhYmVsPgogICAgICA8bWFyazpsYWJ
+ lbD50ZXN0LS0tdmFsaWRhdGU8L21hcms6bGFiZWw+CiAgICAgIDxtYXJrOmxhYmVsPnRlc3
+ RhbmQtdmFsaWRhdGU8L21hcms6bGFiZWw+CiAgICAgIDxtYXJrOmxhYmVsPnRlc3QtZXQtd
+ mFsaWRhdGU8L21hcms6bGFiZWw+CiAgICAgIDxtYXJrOmxhYmVsPnRlc3QtdmFsaWRhdGU8
+ L21hcms6bGFiZWw+CiAgICAgIDxtYXJrOmxhYmVsPnRlc3QtLXZhbGlkYXRlPC9tYXJrOmx
+ hYmVsPgogICAgICA8bWFyazpsYWJlbD50ZXN0LWV0dmFsaWRhdGU8L21hcms6bGFiZWw+Ci
+ AgICAgIDxtYXJrOmxhYmVsPnRlc3RldHZhbGlkYXRlPC9tYXJrOmxhYmVsPgogICAgICA8b
+ WFyazpsYWJlbD50ZXN0dmFsaWRhdGU8L21hcms6bGFiZWw+CiAgICAgIDxtYXJrOmxhYmVs
+ PnRlc3RldC12YWxpZGF0ZTwvbWFyazpsYWJlbD4KICAgICAgPG1hcms6Z29vZHNBbmRTZXJ
 
 
 
-Lozano                 Expires September 26, 2013              [Page 12]
+Lozano                   Expires March 31, 2014                [Page 13]
 
-Internet-Draft            Mark and Signed Mark                March 2013
+Internet-Draft            Mark and Signed Mark            September 2013
 
 
-   CiAgPHNtZDppc3N1ZXJJbmZvIGlzc3VlcklEPSIyIj4KICAgIDxzbWQ6b3JnPkV4
-   YW1wbGUgSW5jLjwvc21kOm9yZz4KICAgIDxzbWQ6ZW1haWw+c3VwcG9ydEBleGFt
-   cGxlLnRsZDwvc21kOmVtYWlsPgogICAgPHNtZDp1cmw+aHR0cDovL3d3dy5leGFt
-   cGxlLnRsZDwvc21kOnVybD4KICAgIDxzbWQ6dm9pY2UgeD0iMTIzNCI+KzEuNzAz
-   NTU1NTU1NTwvc21kOnZvaWNlPgogIDwvc21kOmlzc3VlckluZm8+CiAgPHNtZDpu
-   b3RCZWZvcmU+MjAwOS0wOC0xNlQwOTowMDowMC4wWjwvc21kOm5vdEJlZm9yZT4K
-   ICA8c21kOm5vdEFmdGVyPjIwMTAtMDgtMTZUMDk6MDA6MDAuMFo8L3NtZDpub3RB
-   ZnRlcj4KICA8bWFyazptYXJrIHhtbG5zOm1hcms9InVybjppZXRmOnBhcmFtczp4
-   bWw6bnM6bWFyay0xLjAiPgogICAgPG1hcms6dHJhZGVtYXJrPgogICAgICA8bWFy
-   azppZD4xMjM0LTI8L21hcms6aWQ+CiAgICAgIDxtYXJrOm1hcmtOYW1lPkV4YW1w
-   bGUgT25lPC9tYXJrOm1hcmtOYW1lPgogICAgICA8bWFyazpob2xkZXIgZW50aXRs
-   ZW1lbnQ9Im93bmVyIj4KICAgICAgICA8bWFyazpvcmc+RXhhbXBsZSBJbmMuPC9t
-   YXJrOm9yZz4KICAgICAgICA8bWFyazphZGRyPgogICAgICAgICAgPG1hcms6c3Ry
-   ZWV0PjEyMyBFeGFtcGxlIERyLjwvbWFyazpzdHJlZXQ+CiAgICAgICAgICA8bWFy
-   azpzdHJlZXQ+U3VpdGUgMTAwPC9tYXJrOnN0cmVldD4KICAgICAgICAgIDxtYXJr
-   OmNpdHk+UmVzdG9uPC9tYXJrOmNpdHk+CiAgICAgICAgICA8bWFyazpzcD5WQTwv
-   bWFyazpzcD4KICAgICAgICAgIDxtYXJrOnBjPjIwMTkwPC9tYXJrOnBjPgogICAg
-   ICAgICAgPG1hcms6Y2M+VVM8L21hcms6Y2M+CiAgICAgICAgPC9tYXJrOmFkZHI+
-   CiAgICAgIDwvbWFyazpob2xkZXI+CiAgICAgIDxtYXJrOmp1cmlzZGljdGlvbj5V
-   UzwvbWFyazpqdXJpc2RpY3Rpb24+CiAgICAgIDxtYXJrOmNsYXNzPjM1PC9tYXJr
-   OmNsYXNzPgogICAgICA8bWFyazpjbGFzcz4zNjwvbWFyazpjbGFzcz4KICAgICAg
-   PG1hcms6bGFiZWw+ZXhhbXBsZS1vbmU8L21hcms6bGFiZWw+CiAgICAgIDxtYXJr
-   OmxhYmVsPmV4YW1wbGVvbmU8L21hcms6bGFiZWw+CiAgICAgIDxtYXJrOmdvb2Rz
-   QW5kU2VydmljZXM+RGlyaWdlbmRhcyBldCBlaXVzbW9kaQogICAgICAgIGZlYXR1
-   cmluZyBpbmZyaW5nbyBpbiBhaXJmYXJlIGV0IGNhcnRhbSBzZXJ2aWNpYS4KICAg
-   ICAgPC9tYXJrOmdvb2RzQW5kU2VydmljZXM+IAogICAgICA8bWFyazpyZWdOdW0+
-   MjM0MjM1PC9tYXJrOnJlZ051bT4KICAgICAgPG1hcms6cmVnRGF0ZT4yMDA5LTA4
-   LTE2VDA5OjAwOjAwLjBaPC9tYXJrOnJlZ0RhdGU+CiAgICAgIDxtYXJrOmV4RGF0
-   ZT4yMDE1LTA4LTE2VDA5OjAwOjAwLjBaPC9tYXJrOmV4RGF0ZT4KICAgIDwvbWFy
-   azp0cmFkZW1hcms+CiAgPC9tYXJrOm1hcms+CiAgPFNpZ25hdHVyZSB4bWxucz0i
-   aHR0cDovL3d3dy53My5vcmcvMjAwMC8wOS94bWxkc2lnIyI+CiAgICA8U2lnbmVk
-   SW5mbz4KICAgICAgPENhbm9uaWNhbGl6YXRpb25NZXRob2QgQWxnb3JpdGhtPSJo
-   dHRwOi8vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiLz4KICAgICAg
-   PFNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIw
-   MDEvMDQveG1sZHNpZy1tb3JlI3JzYS1zaGEyNTYiLz4KICAgICAgPFJlZmVyZW5j
-   ZSBVUkk9IiNzaWduZWRNYXJrIj4KICAgICAgICA8VHJhbnNmb3Jtcz4KICAgICAg
-   ICAgIDxUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAw
-   LzA5L3htbGRzaWcjZW52ZWxvcGVkLXNpZ25hdHVyZSIvPgogICAgICAgIDwvVHJh
-   bnNmb3Jtcz4KICAgICAgICA8RGlnZXN0TWV0aG9kIEFsZ29yaXRobT0iaHR0cDov
-   L3d3dy53My5vcmcvMjAwMS8wNC94bWxlbmMjc2hhMjU2Ii8+CiAgICAgICAgPERp
-   Z2VzdFZhbHVlPm1pRjRNMmFUZDFZM3RLT3pKdGl5bDJWcHpBblZQblYxSHE3WmF4
-   K3l6ckE9PC9EaWdlc3RWYWx1ZT4KICAgICAgPC9SZWZlcmVuY2U+CiAgICA8L1Np
-   Z25lZEluZm8+CiAgICA8U2lnbmF0dXJlVmFsdWU+TUVMcEhUV0VWZkcxSmNzRzEv
-   YS8vbzU0T25sSjVBODY0K1g1SndmcWdHQkJlWlN6R0hOend6VEtGekl5eXlmbgps
-   R3hWd05Nb0JWNWFTdmtGN29FS01OVnpmY2wvUDBjek5RWi9MSjgzcDNPbDI3L2lV
-   TnNxZ0NhR2Y5WnVwdytNClhUNFEybE9ySXcrcVN4NWc3cTlUODNzaU1MdmtENXVF
-   WWxVNWRQcWdzT2JMVFc4L2RvVFFyQTE0UmN4Z1k0a0cKYTQrdDVCMWNUKzVWYWdo
-   VE9QYjh1VVNFREtqbk9zR2R5OHAyNHdneUs5bjhoMENUU1MyWlE2WnEvUm1RZVQ3
+ 2aWNlcz5ndWl0YXI8L21hcms6Z29vZHNBbmRTZXJ2aWNlcz4KICAgICAgPG1hcms6cmVnTn
+ VtPjEyMzQ8L21hcms6cmVnTnVtPgogICAgICA8bWFyazpyZWdEYXRlPjIwMTItMTItMzFUM
+ jM6MDA6MDAuMDAwWjwvbWFyazpyZWdEYXRlPgogICAgPC9tYXJrOnRyYWRlbWFyaz4KICA8
+ L21hcms6bWFyaz4KPGRzOlNpZ25hdHVyZSB4bWxuczpkcz0iaHR0cDovL3d3dy53My5vcmc
+ vMjAwMC8wOS94bWxkc2lnIyIgSWQ9Il81ODg5YzM5Zi1jMzM3LTQ0NzctOTU1Ni05NTNiZT
+ A5Y2NkMTgiPjxkczpTaWduZWRJbmZvPjxkczpDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ
+ 29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIi8+PGRz
+ OlNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQ
+ veG1sZHNpZy1tb3JlI3JzYS1zaGEyNTYiLz48ZHM6UmVmZXJlbmNlIFVSST0iI184Yzk0Zj
+ RmMS1jZTlmLTRjOTAtOTUzMS01MzE1ZDIzY2EzYmQiPjxkczpUcmFuc2Zvcm1zPjxkczpUc
+ mFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwLzA5L3htbGRzaWcj
+ ZW52ZWxvcGVkLXNpZ25hdHVyZSIvPjxkczpUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8
+ vd3d3LnczLm9yZy8yMDAxLzEwL3htbC1leGMtYzE0biMiLz48L2RzOlRyYW5zZm9ybXM+PG
+ RzOkRpZ2VzdE1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQve
+ G1sZW5jI3NoYTI1NiIvPjxkczpEaWdlc3RWYWx1ZT5IdUdKYlZCWkVaVGlFelB2d0NObVFs
+ NmFMZEExWHo1QzAzdnhDWFBIZW1BPTwvZHM6RGlnZXN0VmFsdWU+PC9kczpSZWZlcmVuY2U
+ +PGRzOlJlZmVyZW5jZSBVUkk9IiNfMWRlNTg5OGMtNmY3Ny00ZDViLTlkZDgtMzE4MWM5MT
+ E3Yzk3Ij48ZHM6VHJhbnNmb3Jtcz48ZHM6VHJhbnNmb3JtIEFsZ29yaXRobT0iaHR0cDovL
+ 3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIi8+PC9kczpUcmFuc2Zvcm1zPjxk
+ czpEaWdlc3RNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3h
+ tbGVuYyNzaGEyNTYiLz48ZHM6RGlnZXN0VmFsdWU+NHBiU0M2M2xObVBxelc3TDBNRDBxZ0
+ 5GNHc5SUE3YXQ3OWxEVE5VZjBndz08L2RzOkRpZ2VzdFZhbHVlPjwvZHM6UmVmZXJlbmNlP
+ jwvZHM6U2lnbmVkSW5mbz48ZHM6U2lnbmF0dXJlVmFsdWUgSWQ9Il9hODAwZmIwNS02NjRh
+ LTQ2OTItYjM5MS04OTM4NTlhNTM0OGQiPlc5VHAxQ09HeEk4dlZQNkZONEdpYlhtc3RRM1Z
+ 0bmpSZVN3VVdicFZCTEtmenZ1L1c1OGNoOUdxdnRQTm9HZTdXOXVvQUt0U1J0MUkKMzdPeD
+ IwQmVQb2xGdWZmekVVR3NGMHBETkRoWmNiRUdEMlVWRTBpYnhIRkVDUU13d0ppK1NVb2ora
+ 3JIWmRXM0FybmNaZ0RkMkhXZgpudVJZSmVucnpCS2k2RG1YVlVRYlhXRFVkbGxzcjlDSmtB
+ THYrd0s2V2RweE9Na0NTc2E0WUU2bEVNTjVXNGhzUXFlZ2N6ZGkwdUZ0CnZxQ2JLVnM3RTJ
+ 3c0VIZC94aUxzbldZNEUxNWdLNnI0UW9tWHJqdFI0ZkFyZ1lMTnRLK09NRCt6UktNeGNuNV
+ F2QzJVeHlzNUV6RHcKNmhlenYrdXBxTldkRjRYL2lCNW1JY25DMzAraVBpY3lDb2JHUlE9P
+ TwvZHM6U2lnbmF0dXJlVmFsdWU+PGRzOktleUluZm8gSWQ9Il8xZGU1ODk4Yy02Zjc3LTRk
+ NWItOWRkOC0zMTgxYzkxMTdjOTciPjxkczpYNTA5RGF0YT48ZHM6WDUwOUNlcnRpZmljYXR
+ lPk1JSUZMekNDQkJlZ0F3SUJBZ0lnTHJBYmV2b2FlNTJ5M2Y2QzJ0QjBTbjNwN1hKbTBUMD
+ JGb2d4S0NmTmhYb3dEUVlKS29aSWh2Y04KQVFFTEJRQXdmREVMTUFrR0ExVUVCaE1DVlZNe
+ FBEQTZCZ05WQkFvVE0wbHVkR1Z5Ym1WMElFTnZjbkJ2Y21GMGFXOXVJR1p2Y2lCQgpjM05w
+ WjI1bFpDQk9ZVzFsY3lCaGJtUWdUblZ0WW1WeWN6RXZNQzBHQTFVRUF4TW1TVU5CVGs0Z1Z
+ ISmhaR1Z0WVhKcklFTnNaV0Z5CmFXNW5hRzkxYzJVZ1VHbHNiM1FnUTBFd0hoY05NVE13Tm
+ pJMk1EQXdNREF3V2hjTk1UZ3dOakkxTWpNMU9UVTVXakNCanpFTE1Ba0cKQTFVRUJoTUNRa
+ 1V4SURBZUJnTlZCQWdURjBKeWRYTnpaV3h6TFVOaGNHbDBZV3dnVW1WbmFXOXVNUkV3RHdZ
+ RFZRUUhFd2hDY25WegpjMlZzY3pFUk1BOEdBMVVFQ2hNSVJHVnNiMmwwZEdVeE9EQTJCZ05
+ WQkFNVEwwbERRVTVPSUZSTlEwZ2dRWFYwYUc5eWFYcGxaQ0JVCmNtRmtaVzFoY21zZ1VHbH
+ NiM1FnVm1Gc2FXUmhkRzl5TUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ
+ 2dLQ0FRRUEKeGxwM0twWUhYM1d5QXNGaFNrM0x3V2ZuR2x4blVERnFGWkEzVW91TVlqL1hp
+ Z2JNa05lRVhJamxrUk9LVDRPUEdmUngvTEF5UmxRUQpqQ012NHFoYmtjWDFwN2FyNjNmbHE
+ 0U1pOVmNsMTVsN2gwdVQ1OEZ6U2ZubHowdTVya0hmSkltRDQzK21hUC84Z3YzNkZSMjdqVz
+ hSCjl3WTRoaytXczRJQjBpRlNkOFNYdjFLcjh3L0ptTVFTRGtpdUcrUmZJaXVid1EvZnk3R
+ WtqNVFXaFBadyttTXhOS25IVUx5M3hZejIKTHdWZmZ0andVdWVhY3ZxTlJDa01YbENsT0FE
+ cWZUOG9TWm9lRFhlaEh2bFBzTENlbUdCb1RLdXJza0lTNjlGMHlQRUg1Z3plMEgrZgo4RlJ
 
 
 
-Lozano                 Expires September 26, 2013              [Page 13]
+Lozano                   Expires March 31, 2014                [Page 14]
 
-Internet-Draft            Mark and Signed Mark                March 2013
+Internet-Draft            Mark and Signed Mark            September 2013
 
 
-   RApzYmNlVUhoZVErbWtRV0lsanBNUXFzaUJqdzVYWGg0amtFZ2ZBenJiNmdrWUVG
-   K1g4UmV1UFp1T1lDNFFqSUVUCnl4OGlmTjRLRTNHSWJNWGVGNExEc0E9PTwvU2ln
-   bmF0dXJlVmFsdWU+CiAgICA8S2V5SW5mbz4KICAgICAgPEtleVZhbHVlPgo8UlNB
-   S2V5VmFsdWU+CjxNb2R1bHVzPgpvL2N3dlhoYlZZbDBSRFdXdm95ZVpwRVRWWlZW
-   Y01Db3ZVVk5nL3N3V2ludU1nRVdnVlFGcnoweEEwNHBFaFhDCkZWdjRldmJVcGVr
-   SjVidXFVMWdtUXlPc0NLUWxoT0hUZFBqdmtDNXVwRHFhNTFGbGswVE1hTWtJUWpz
-   N2FVS0MKbUE0Ukc0dFRUR0svRWpSMWl4OC9EMGdIWVZSbGR5MVlQck1QK291NzVi
-   T1ZuSW9zK0hpZnJBdHJJdjRxRXF3TApMNEZUWkFVcGFDYTJCbWdYZnkyQ1NSUWJ4
-   RDVPcjFnY1NhM3Z1cmg1c1BNQ054cWFYbUlYbVFpcFMrRHVFQnFNCk04dGxkYU43
-   UllvalVFS3JHVnNOazVpOXkyLzdzam4xenl5VVBmN3ZMNEdnRFlxaEpZV1Y2MURu
-   WGd4L0pkNkMKV3h2c25ERjZzY3NjUXpVVEVsK2h5dz09CjwvTW9kdWx1cz4KPEV4
-   cG9uZW50PgpBUUFCCjwvRXhwb25lbnQ+CjwvUlNBS2V5VmFsdWU+CjwvS2V5VmFs
-   dWU+CiAgICAgIDxYNTA5RGF0YT4KPFg1MDlDZXJ0aWZpY2F0ZT5NSUlFU1RDQ0F6
-   R2dBd0lCQWdJQkFqQU5CZ2txaGtpRzl3MEJBUXNGQURCaU1Rc3dDUVlEVlFRR0V3
-   SlZVekVMCk1Ba0dBMVVFQ0JNQ1EwRXhGREFTQmdOVkJBY1RDMHh2Y3lCQmJtZGxi
-   R1Z6TVJNd0VRWURWUVFLRXdwSlEwRk8KVGlCVVRVTklNUnN3R1FZRFZRUURFeEpK
-   UTBGT1RpQlVUVU5JSUZSRlUxUWdRMEV3SGhjTk1UTXdNakE0TURBdwpNREF3V2hj
-   Tk1UZ3dNakEzTWpNMU9UVTVXakJzTVFzd0NRWURWUVFHRXdKVlV6RUxNQWtHQTFV
-   RUNCTUNRMEV4CkZEQVNCZ05WQkFjVEMweHZjeUJCYm1kbGJHVnpNUmN3RlFZRFZR
-   UUtFdzVXWVd4cFpHRjBiM0lnVkUxRFNERWgKTUI4R0ExVUVBeE1ZVm1Gc2FXUmhk
-   Rzl5SUZSTlEwZ2dWRVZUVkNCRFJWSlVNSUlCSWpBTkJna3Foa2lHOXcwQgpBUUVG
-   QUFPQ0FROEFNSUlCQ2dLQ0FRRUFvL2N3dlhoYlZZbDBSRFdXdm95ZVpwRVRWWlZW
-   Y01Db3ZVVk5nL3N3CldpbnVNZ0VXZ1ZRRnJ6MHhBMDRwRWhYQ0ZWdjRldmJVcGVr
-   SjVidXFVMWdtUXlPc0NLUWxoT0hUZFBqdmtDNXUKcERxYTUxRmxrMFRNYU1rSVFq
-   czdhVUtDbUE0Ukc0dFRUR0svRWpSMWl4OC9EMGdIWVZSbGR5MVlQck1QK291Nwo1
-   Yk9WbklvcytIaWZyQXRySXY0cUVxd0xMNEZUWkFVcGFDYTJCbWdYZnkyQ1NSUWJ4
-   RDVPcjFnY1NhM3Z1cmg1CnNQTUNOeHFhWG1JWG1RaXBTK0R1RUJxTU04dGxkYU43
-   UllvalVFS3JHVnNOazVpOXkyLzdzam4xenl5VVBmN3YKTDRHZ0RZcWhKWVdWNjFE
-   blhneC9KZDZDV3h2c25ERjZzY3NjUXpVVEVsK2h5d0lEQVFBQm80SC9NSUg4TUF3
-   RwpBMVVkRXdFQi93UUNNQUF3SFFZRFZSME9CQllFRlBaRWNJUWNEL0JqMklGei9M
-   RVJ1bzJBREp2aU1JR01CZ05WCkhTTUVnWVF3Z1lHQUZPMC83a0VoM0Z1RUtTK1Ev
-   a1lIYUQvVzZ3aWhvV2FrWkRCaU1Rc3dDUVlEVlFRR0V3SlYKVXpFTE1Ba0dBMVVF
-   Q0JNQ1EwRXhGREFTQmdOVkJBY1RDMHh2Y3lCQmJtZGxiR1Z6TVJNd0VRWURWUVFL
-   RXdwSgpRMEZPVGlCVVRVTklNUnN3R1FZRFZRUURFeEpKUTBGT1RpQlVUVU5JSUZS
-   RlUxUWdRMEdDQVFFd0RnWURWUjBQCkFRSC9CQVFEQWdlQU1DNEdBMVVkSHdRbk1D
-   VXdJNkFob0IrR0hXaDBkSEE2THk5amNtd3VhV05oYm00dWIzSm4KTDNSdFkyZ3VZ
-   M0pzTUEwR0NTcUdTSWIzRFFFQkN3VUFBNElCQVFCMnFTeTd1aSs0M2NlYktVS3dX
-   UHJ6ejl5LwpJa3JNZUpHS2pvNDBuKzl1ZWthdzNESjVFcWlPZi9xWjRwakJEKytv
-   UjZCSkNiNk5RdVFLd25vQXo1bEU0U3N1Cnk1K2k5M29UM0hmeVZjNGdOTUlvSG0x
-   UFMxOWw3REJLcmJ3YnpBZWEvMGpLV1Z6cnZtVjdUQmZqeEQzQVFvMVIKYlU1ZEJy
-   NklqYmRMRmxuTzV4MEcwbXJHN3g1T1VQdXVyaWh5aVVScEZEcHdIOEtBSDF3TWND
-   cFhHWEZSdEdLawp3eWRneVZZQXR5N290a2wvejNiWmtDVlQzNGdQdkY3MHNSNitR
-   eFV5OHUwTHpGNUEvYmVZYVpweFNZRzMxYW1MCkFkWGl0VFdGaXBhSUdlYTlsRUdG
-   TTBMOStCZzdYek5uNG5WTFhva3lFQjNiZ1M0c2NHNlF6blgyM0ZHazwvWDUwOUNl
-   cnRpZmljYXRlPgo8L1g1MDlEYXRhPgogICAgPC9LZXlJbmZvPgogIDwvU2lnbmF0
-   dXJlPgo8L3NtZDpzaWduZWRNYXJrPgo=
-   </smd:encodedSignedMark>
-
-
-
-
-Lozano                 Expires September 26, 2013              [Page 14]
-
-Internet-Draft            Mark and Signed Mark                March 2013
+ Pc0lvS1NzVlEzNEI0Uy9qb0U2N25wc0pQVGRLc05QSlR5UUlEQVFBQm80SUJoekNDQVlNd0
+ RBWURWUjBUQVFIL0JBSXdBREFkCkJnTlZIUTRFRmdRVW9GcFk3NnA1eW9ORFJHdFFwelZ1U
+ jgxVVdRMHdnY1lHQTFVZEl3U0J2akNCdTRBVXc2MCtwdFlSQUVXQVhEcFgKU29wdDNERU5u
+ bkdoZ1lDa2ZqQjhNUXN3Q1FZRFZRUUdFd0pWVXpFOE1Eb0dBMVVFQ2hNelNXNTBaWEp1Wlh
+ RZ1EyOXljRzl5WVhScApiMjRnWm05eUlFRnpjMmxuYm1Wa0lFNWhiV1Z6SUdGdVpDQk9kVz
+ FpWlhKek1TOHdMUVlEVlFRREV5WkpRMEZPVGlCVWNtRmtaVzFoCmNtc2dRMnhsWVhKcGJtZ
+ G9iM1Z6WlNCUWFXeHZkQ0JEUVlJZ0xyQWJldm9hZTUyeTNmNkMydEIwU24zcDdYSm0wVDAy
+ Rm9neEtDZk4KaFhrd0RnWURWUjBQQVFIL0JBUURBZ2VBTURRR0ExVWRId1F0TUNzd0thQW5
+ vQ1dHSTJoMGRIQTZMeTlqY213dWFXTmhibTR1YjNKbgpMM1J0WTJoZmNHbHNiM1F1WTNKc0
+ 1FVUdBMVVkSUFRK01Ed3dPZ1lES2dNRU1ETXdNUVlJS3dZQkJRVUhBZ0VXSldoMGRIQTZMe
+ TkzCmQzY3VhV05oYm00dWIzSm5MM0JwYkc5MFgzSmxjRzl6YVhSdmNua3dEUVlKS29aSWh2
+ Y05BUUVMQlFBRGdnRUJBSWVEWVlKcjYwVzMKeTlRcyszelJWSTlrZWtLb201dmtIT2FsQjN
+ 3SGFaSWFBRllwSTk4dFkwYVZOOWFHT04wdjZXUUYrbnZ6MUtSWlFiQXowMUJYdGFSSgo0bV
+ BrYXJoaHVMbjlOa0J4cDhIUjVxY2MrS0g3Z3Y2ci9jMGlHM2JDTkorUVNyN1FmKzVNbE1vN
+ npMNVVkZFUvVDJqaWJNWENqL2YyCjFRdzN4OVFnb3lYTEZKOW96YUxnUTlSTWtMbE9temtD
+ QWlYTjVBYjQzYUo5ZjdOMmdFMk5uUmpOS21tQzlBQlEwVFJ3RUtWTGhWbDEKVUdxQ0hKM0F
+ sQlhXSVhONXNqUFFjRC8rbkhlRVhNeFl2bEF5cXhYb0QzTVd0UVZqN2oyb3FsYWtPQk1nRz
+ grcTJxWWxtQnRzNEZOaQp3NzQ4SWw1ODZIS0JScXhIdFpkUktXMlZxYVE9PC9kczpYNTA5Q
+ 2VydGlmaWNhdGU+PC9kczpYNTA5RGF0YT48L2RzOktleUluZm8+PC9kczpTaWduYXR1cmU+
+ PC9zbWQ6c2lnbmVkTWFyaz4=
+ </smd:encodedSignedMark>
 
 
 3.  Formal Syntax
@@ -810,6 +833,14 @@ Internet-Draft            Mark and Signed Mark                March 2013
 
    o  Redistributions in binary form must reproduce the above copyright
       notice, this list of conditions and the following disclaimer in
+
+
+
+Lozano                   Expires March 31, 2014                [Page 15]
+
+Internet-Draft            Mark and Signed Mark            September 2013
+
+
       the documentation and/or other materials provided with the
       distribution.
 
@@ -833,14 +864,6 @@ Internet-Draft            Mark and Signed Mark                March 2013
   BEGIN
   <?xml version="1.0" encoding="UTF-8"?>
   <schema
-
-
-
-Lozano                 Expires September 26, 2013              [Page 15]
-
-Internet-Draft            Mark and Signed Mark                March 2013
-
-
     targetNamespace="urn:ietf:params:xml:ns:signedMark-1.0"
     xmlns:smd="urn:ietf:params:xml:ns:signedMark-1.0"
     xmlns:mark="urn:ietf:params:xml:ns:mark-1.0"
@@ -866,6 +889,14 @@ Internet-Draft            Mark and Signed Mark                March 2013
       abstract="true"/>
 
     <!--
+
+
+
+Lozano                   Expires March 31, 2014                [Page 16]
+
+Internet-Draft            Mark and Signed Mark            September 2013
+
+
     Empty type for use in extending for a signed mark
     -->
     <complexType name="abstractSignedMarkType"/>
@@ -889,14 +920,6 @@ Internet-Draft            Mark and Signed Mark                March 2013
             <element ref="dsig:Signature"/>
           </sequence>
           <attribute name="id" type="ID" use="required"/>
-
-
-
-Lozano                 Expires September 26, 2013              [Page 16]
-
-Internet-Draft            Mark and Signed Mark                March 2013
-
-
         </extension>
       </complexContent>
     </complexType>
@@ -922,6 +945,14 @@ Internet-Draft            Mark and Signed Mark                March 2013
   </schema>
   END
 
+
+
+
+Lozano                   Expires March 31, 2014                [Page 17]
+
+Internet-Draft            Mark and Signed Mark            September 2013
+
+
 3.2.  Mark Schema
 
    Copyright (c) 2012 IETF Trust and the persons identified as authors
@@ -945,14 +976,6 @@ Internet-Draft            Mark and Signed Mark                March 2013
       permission.
 
    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-
-
-
-Lozano                 Expires September 26, 2013              [Page 17]
-
-Internet-Draft            Mark and Signed Mark                March 2013
-
-
    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
    A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT
@@ -979,6 +1002,13 @@ Internet-Draft            Mark and Signed Mark                March 2013
      </documentation>
    </annotation>
 
+
+
+Lozano                   Expires March 31, 2014                [Page 18]
+
+Internet-Draft            Mark and Signed Mark            September 2013
+
+
    <!--
    Abstract mark for replacement via substitution.
    -->
@@ -1001,14 +1031,6 @@ Internet-Draft            Mark and Signed Mark                March 2013
    -->
    <complexType name="markType">
      <complexContent>
-
-
-
-Lozano                 Expires September 26, 2013              [Page 18]
-
-Internet-Draft            Mark and Signed Mark                March 2013
-
-
        <extension base="mark:abstractMarkType">
          <sequence>
            <element name="trademark" type="mark:trademarkType"
@@ -1035,6 +1057,14 @@ Internet-Draft            Mark and Signed Mark                March 2013
      <attribute name="entitlement" type="mark:entitlementType"/>
    </complexType>
 
+
+
+
+Lozano                   Expires March 31, 2014                [Page 19]
+
+Internet-Draft            Mark and Signed Mark            September 2013
+
+
    <complexType name="contactType">
      <sequence>
        <element name="name" type="token"/>
@@ -1057,14 +1087,6 @@ Internet-Draft            Mark and Signed Mark                March 2013
          maxOccurs="unbounded"/>
        <element name="jurisdiction" type="mark:ccType"/>
        <element name="class" type="integer" minOccurs="0"
-
-
-
-Lozano                 Expires September 26, 2013              [Page 19]
-
-Internet-Draft            Mark and Signed Mark                March 2013
-
-
          maxOccurs="unbounded"/>
        <element name="label" type="mark:labelType" minOccurs="0"
          maxOccurs="unbounded"/>
@@ -1091,6 +1113,14 @@ Internet-Draft            Mark and Signed Mark                March 2013
          maxOccurs="unbounded"/>
        <element name="goodsAndServices" type="token" />
        <element name="refNum" type="token"/>
+
+
+
+Lozano                   Expires March 31, 2014                [Page 20]
+
+Internet-Draft            Mark and Signed Mark            September 2013
+
+
        <element name="proDate" type="dateTime"/>
        <element name="title" type="token"/>
        <element name="execDate" type="dateTime"/>
@@ -1113,14 +1143,6 @@ Internet-Draft            Mark and Signed Mark                March 2013
        <element name="cc" type="mark:ccType"/>
        <element name="region" type="token" minOccurs="0"
          maxOccurs="unbounded"/>
-
-
-
-Lozano                 Expires September 26, 2013              [Page 20]
-
-Internet-Draft            Mark and Signed Mark                March 2013
-
-
        <element name="courtName" type="token"/>
      </sequence>
    </complexType>
@@ -1147,6 +1169,14 @@ Internet-Draft            Mark and Signed Mark                March 2013
        <element name="region" type="token" minOccurs="0"/>
        <element name="ruling" type="mark:ccType"
          minOccurs="0" maxOccurs="unbounded"/>
+
+
+
+Lozano                   Expires March 31, 2014                [Page 21]
+
+Internet-Draft            Mark and Signed Mark            September 2013
+
+
      </sequence>
    </complexType>
 
@@ -1169,14 +1199,6 @@ Internet-Draft            Mark and Signed Mark                March 2013
    </simpleType>
 
    <!--
-
-
-
-Lozano                 Expires September 26, 2013              [Page 21]
-
-Internet-Draft            Mark and Signed Mark                March 2013
-
-
    Phone number with extension definition
    -->
    <complexType name="e164Type">
@@ -1203,6 +1225,14 @@ Internet-Draft            Mark and Signed Mark                March 2013
    <simpleType name="idType">
      <restriction base="token">
        <pattern value="\d+-\d+"/>
+
+
+
+Lozano                   Expires March 31, 2014                [Page 22]
+
+Internet-Draft            Mark and Signed Mark            September 2013
+
+
      </restriction>
    </simpleType>
 
@@ -1225,13 +1255,6 @@ Internet-Draft            Mark and Signed Mark                March 2013
        <minLength value="1"/>
      </restriction>
    </simpleType>
-
-
-
-Lozano                 Expires September 26, 2013              [Page 22]
-
-Internet-Draft            Mark and Signed Mark                March 2013
-
 
    <simpleType name="entitlementType">
      <restriction base="token">
@@ -1260,7 +1283,22 @@ Internet-Draft            Mark and Signed Mark                March 2013
    draft is based.
 
 
+
+Lozano                   Expires March 31, 2014                [Page 23]
+
+Internet-Draft            Mark and Signed Mark            September 2013
+
+
 5.  Change History
+
+   Version 02 to version 03
+
+      <smd:signedMark> example is now aligned with ICANN test SMDs.
+
+      <smd:encodedSignedMark> example is replaced with a public ICANN
+      test SMD.
+
+      Several recommendations where added.
 
    Version 01 to version 02
 
@@ -1280,15 +1318,6 @@ Internet-Draft            Mark and Signed Mark                March 2013
 
    Version preview-01 to version 00
 
-
-
-
-
-Lozano                 Expires September 26, 2013              [Page 23]
-
-Internet-Draft            Mark and Signed Mark                March 2013
-
-
       signedMarkType now ref mark:abstractMark
 
       Security section completed
@@ -1306,6 +1335,15 @@ Internet-Draft            Mark and Signed Mark                March 2013
       Missing mark:protectionType added in the XSD.
 
       Issuer email is now required
+
+
+
+
+
+Lozano                   Expires March 31, 2014                [Page 24]
+
+Internet-Draft            Mark and Signed Mark            September 2013
+
 
 
 
@@ -1335,16 +1373,6 @@ Internet-Draft            Mark and Signed Mark                March 2013
       XML: None.  Namespace URIs do not represent an XML specification.
 
 
-
-
-
-
-
-Lozano                 Expires September 26, 2013              [Page 24]
-
-Internet-Draft            Mark and Signed Mark                March 2013
-
-
 7.  Security Considerations
 
    The object mapping described in this document does not provide any
@@ -1365,6 +1393,14 @@ Internet-Draft            Mark and Signed Mark                March 2013
               Requirement Levels", BCP 14, RFC 2119, March 1997.
 
    [RFC3688]  Mealling, M., "The IETF XML Registry", BCP 81, RFC 3688,
+
+
+
+Lozano                   Expires March 31, 2014                [Page 25]
+
+Internet-Draft            Mark and Signed Mark            September 2013
+
+
               January 2004.
 
    [RFC5730]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)",
@@ -1396,5 +1432,25 @@ Author's Address
 
 
 
-Lozano                 Expires September 26, 2013              [Page 25]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lozano                   Expires March 31, 2014                [Page 26]
 
